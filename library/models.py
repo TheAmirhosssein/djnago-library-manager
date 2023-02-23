@@ -1,9 +1,10 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 PROFESSIONS = (
     ("نویسنده", "AUTHOR"),
     ("ویراستار", "EDITOR"),
-    ("نویسنده", "TRANSLATOR"),
+    ("منرجم", "TRANSLATOR"),
 )
 
 
@@ -12,6 +13,15 @@ class Authors(models.Model):
     profession = models.CharField(
         choices=PROFESSIONS, max_length=3, verbose_name="حرفه"
     )
-    heigh = models.CharField(max_length=10, verbose_name="قد")
-    birth_date = models.CharField(max_length=50, verbose_name="تاریخ تولد")
-    birth_place = models.CharField(max_length=50, verbose_name="محل تولد")
+    slug = models.SlugField(db_index=True, null=False, default="", unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self) -> str:
+        return super().__str__(self.name)
+
+    class Meta:
+        verbose_name = "نویسنده"
+        verbose_name_plural = "نویسندگان"

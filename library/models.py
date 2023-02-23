@@ -22,6 +22,14 @@ class Authors(models.Model):
     def __str__(self) -> str:
         return super().__str__(self.name)
 
-    class Meta:
-        verbose_name = "نویسنده"
-        verbose_name_plural = "نویسندگان"
+
+class Genres(models.Model):
+    title = models.CharField(max_length=50, verbose_name="عنوان")
+    slug = models.SlugField(db_index=True, null=False, default="", unique=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def __str__(self) -> str:
+        return super().__str__(self.title)

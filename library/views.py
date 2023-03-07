@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import DetailView, TemplateView
+
+from library import models
 
 # Create your views here.
 
@@ -10,3 +12,4 @@ class HomeView(TemplateView):
 
 class BookDetailView(TemplateView):
     template_name = "library/book_details.html"
+    model = models.Books

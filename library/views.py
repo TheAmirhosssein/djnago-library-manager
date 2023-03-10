@@ -10,6 +10,6 @@ class HomeView(TemplateView):
     template_name = "library/home.html"
 
 
-class BookDetailView(TemplateView):
+class BookDetailView(DetailView):
     template_name = "library/book_details.html"
     model = models.Books

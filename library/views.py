@@ -16,3 +16,8 @@ class BookDetailView(DetailView):
 class AuthorView(DetailView):
     template_name = "library/author.html"
     model = models.Authors
+
+
+class TranslatorView(DetailView):
+    template_name = "library/translators.html"
+    model = models.Authors

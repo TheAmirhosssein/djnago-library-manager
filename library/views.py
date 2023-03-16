@@ -21,3 +21,8 @@ class AuthorView(DetailView):
 class TranslatorView(DetailView):
     template_name = "library/translators.html"
     model = models.Authors
+
+
+class GenresView(DetailView):
+    template_name = "library/genres.html"
+    model = models.Genres

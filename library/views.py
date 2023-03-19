@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import DetailView, ListView
 
 from library import models
 
 
-class HomeView(TemplateView):
+class HomeView(ListView):
     template_name = "library/home.html"
+    model = models.Books
+    context_object_name = "books"
 
 
 class BookDetailView(DetailView):

@@ -13,6 +13,7 @@ class HomeView(ListView):
 class BookDetailView(DetailView):
     template_name = "library/book_details.html"
     model = models.Books
+    context_object_name = "book"
 
 
 class AuthorView(DetailView):

@@ -1,1 +1,147 @@
 {% extends 'admin_panel/basic.html' %}
+{% block title %}صفحه شروع | کنترل پنل{% endblock title %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        صفحه شروع
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> خانه</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>150</h3>
+
+                    <p>کتاب ها</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-book"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>نویسنده</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>44</h3>
+
+                    <p>ناشر</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-print"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>65</h3>
+
+                    <p>مترجم</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                    اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">جدول ریسپانسیو</h3>
+
+            <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control pull-right" placeholder="جستجو">
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>شماره</th>
+                        <th>کاربر</th>
+                        <th>تاریخ</th>
+                        <th>وضعیت</th>
+                        <th>دلیل</th>
+                    </tr>
+                    <tr>
+                        <td>183</td>
+                        <td>جان</td>
+                        <td>۱۳ مرداد ۱۳۹۶</td>
+                        <td><span class="label label-success">تایید شده</span></td>
+                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>219</td>
+                        <td>الکساندر</td>
+                        <td>۱۴ مرداد ۱۳۹۶</td>
+                        <td><span class="label label-warning">در حال بررسی</span></td>
+                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>657</td>
+                        <td>باب</td>
+                        <td>۱۵ مرداد ۱۳۹۶</td>
+                        <td><span class="label label-primary">در انتظار</span></td>
+                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>175</td>
+                        <td>مایک</td>
+                        <td>۱۶ مرداد ۱۳۹۶</td>
+                        <td><span class="label label-danger">رد شده</span></td>
+                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</section>
+
+{% endblock content %}

@@ -15,7 +15,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>150</h3>
+                    <h3>{{books.count}}</h3>
 
                     <p>کتاب ها</p>
                 </div>
@@ -32,7 +32,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <h3>{{authors.count}}<sup style="font-size: 20px"></sup></h3>
 
                     <p>نویسنده</p>
                 </div>
@@ -49,7 +49,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3>{{publishers.count}}</h3>
 
                     <p>ناشر</p>
                 </div>
@@ -66,7 +66,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>65</h3>
+                    <h3>{{translators.count}}</h3>
 
                     <p>مترجم</p>
                 </div>
@@ -80,67 +80,50 @@
         </div>
         <!-- ./col -->
     </div>
+
     <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">جدول ریسپانسیو</h3>
+        <div>
+            <div class="box-header">
+                <h3 class="box-title">لیست کتاب ها</h3>
 
-            <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control pull-right" placeholder="جستجو">
-
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
             </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <th>شماره</th>
+                            <th>عنوان</th>
+                            <th>نوینسده</th>
+                            <th>ناشر</th>
+                            <th>حرکت ها</th>
+                        </tr>
+                        {% for book in books %}
+                        <tr>
+                            <td>{{book.id}}</td>
+                            <td>{{book.title}}</td>
+                            <td>{{book.author}}</td>
+                            <td>{{book.publisher}}</td>
+                            <td>
+                                <a href="" class="label-danger">
+                                    <span class="label label-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </span>
+                                </a>
+                                <a href="" class="label-primary">
+                                    <span class="label label-primary">
+                                        <i class="fa  fa-pencil-square"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <!-- /.box-body -->
         </div>
-        <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
-                <tbody>
-                    <tr>
-                        <th>شماره</th>
-                        <th>کاربر</th>
-                        <th>تاریخ</th>
-                        <th>وضعیت</th>
-                        <th>دلیل</th>
-                    </tr>
-                    <tr>
-                        <td>183</td>
-                        <td>جان</td>
-                        <td>۱۳ مرداد ۱۳۹۶</td>
-                        <td><span class="label label-success">تایید شده</span></td>
-                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>219</td>
-                        <td>الکساندر</td>
-                        <td>۱۴ مرداد ۱۳۹۶</td>
-                        <td><span class="label label-warning">در حال بررسی</span></td>
-                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>657</td>
-                        <td>باب</td>
-                        <td>۱۵ مرداد ۱۳۹۶</td>
-                        <td><span class="label label-primary">در انتظار</span></td>
-                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>175</td>
-                        <td>مایک</td>
-                        <td>۱۶ مرداد ۱۳۹۶</td>
-                        <td><span class="label label-danger">رد شده</span></td>
-                        <td>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- /.box-body -->
     </div>
 </section>
 

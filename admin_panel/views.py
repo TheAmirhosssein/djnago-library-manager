@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import ListView, TemplateView
 
 from library import models
 
@@ -14,3 +14,10 @@ class DashboardView(TemplateView):
         context["publishers"] = models.Publishers.objects.all()
         context["translators"] = models.Translators.objects.all()
         return context
+
+
+# books view
+class BooksListView(ListView):
+    template_name = "admin_panel/books/books_list.html"
+    model = models.Books
+    context_object_name = "books"

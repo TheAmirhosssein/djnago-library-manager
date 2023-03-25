@@ -71,7 +71,7 @@ class Books(models.Model):
     publisher = models.ForeignKey(
         Publishers, verbose_name="ناشر", on_delete=models.CASCADE
     )
-    book_image = models.ImageField(upload_to="images/books")
+    book_image = models.ImageField(upload_to="images/books", verbose_name="کاور کتاب")
     detail = models.TextField(verbose_name="توضیحات")
 
     def save(self, *args, **kwargs):

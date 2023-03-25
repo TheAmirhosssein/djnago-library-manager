@@ -1,0 +1,24 @@
+{% extends 'admin_panel/basic.html' %}
+{% block title %}
+افزودن کتاب
+{% endblock %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        صفحه شروع
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> خانه</a></li>
+    </ol>
+</section>
+<section class="content">
+    <form action="{%url 'books_create' %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success btn-lg">
+            ثبت
+        </button>
+    </form>
+</section>
+
+{% endblock %}

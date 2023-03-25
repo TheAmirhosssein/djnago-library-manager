@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView
+from django.views.generic import CreateView, FormView, ListView, TemplateView
 
+from admin_panel import forms
 from library import models
 
 
@@ -21,3 +22,9 @@ class BooksListView(ListView):
     template_name = "admin_panel/books/books_list.html"
     model = models.Books
     context_object_name = "books"
+
+
+class AddBookView(CreateView):
+    template_name = "admin_panel/books/books_create.html"
+    form_class = forms.BooksForm
+    success_url = "/admin_panel/books/"

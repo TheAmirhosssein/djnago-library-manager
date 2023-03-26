@@ -1,5 +1,5 @@
 from django.db import models
-from django.template.defaultfilters import slugify
+from django.utils.text import slugify
 
 
 class Authors(models.Model):
@@ -9,7 +9,7 @@ class Authors(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.name, allow_unicode=True)
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Translators(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.name, allow_unicode=True)
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Genres(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -48,19 +48,13 @@ class Publishers(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
     website = models.URLField(verbose_name="وب سایت")
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.title
 
 
 class Books(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
-    slug = models.SlugField(
-        db_index=True, null=False, default="", unique=True, editable=False
-    )
+    slug = models.SlugField(max_length=20, allow_unicode=True)
     translator = models.ForeignKey(
         Translators, verbose_name="مترجم", on_delete=models.CASCADE
     )
@@ -75,7 +69,7 @@ class Books(models.Model):
     detail = models.TextField(verbose_name="توضیحات")
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super().save(*args, **kwargs)
 
     def __str__(self) -> str:

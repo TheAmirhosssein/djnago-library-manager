@@ -21,7 +21,7 @@ class BooksForm(forms.ModelForm):
             "book_image": forms.FileInput(
                 attrs={"class": "form-control", "label": "تصویر مقاله"}
             ),
-            "detail": forms.TextInput(
+            "detail": forms.Textarea(
                 attrs={"class": "form-control", "label": "توضیحات کوتاه"}
             ),
             "translator": forms.Select(

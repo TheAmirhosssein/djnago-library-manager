@@ -2,11 +2,6 @@ from django import forms
 
 from library.models import Books
 
-# class BooksForm(ModelForm):
-#     class Meta:
-#         model = Books
-#         fields = "__all__"
-
 
 class BooksForm(forms.ModelForm):
     class Meta:

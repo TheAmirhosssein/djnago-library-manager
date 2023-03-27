@@ -6,4 +6,5 @@ urlpatterns = [
     path("", views.DashboardView.as_view(), name="admin"),
     path("books/", views.BooksListView.as_view(), name="books_admin"),
     path("books/create/", views.AddBookView.as_view(), name="books_create"),
+    path("books/<pk>/update/", views.UpdateBookView.as_view(), name="book_update"),
 ]

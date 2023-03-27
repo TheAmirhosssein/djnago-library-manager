@@ -54,7 +54,9 @@ class Publishers(models.Model):
 
 class Books(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
-    slug = models.SlugField(max_length=20, allow_unicode=True)
+    slug = models.SlugField(
+        max_length=20, allow_unicode=True, unique=True, editable=False
+    )
     translator = models.ForeignKey(
         Translators, verbose_name="مترجم", on_delete=models.CASCADE
     )

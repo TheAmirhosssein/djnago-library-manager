@@ -117,3 +117,9 @@ class UpdatePublisherView(UpdateView):
     template_name = "admin_panel/publishers/publisher_update.html"
     fields = "__all__"
     success_url = reverse_lazy("publishers_admin")
+
+
+class DeletePublisherView(DeleteView):
+    template_name = "admin_panel/publishers/publisher_delete.html"
+    success_url = reverse_lazy("publishers_admin")
+    model = models.Publishers

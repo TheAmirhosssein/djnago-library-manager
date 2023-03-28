@@ -28,8 +28,13 @@ urlpatterns = [
         name="publishers_create",
     ),
     path(
-        "publishers/<pk>/update",
+        "publishers/<pk>/update/",
         views.UpdatePublisherView.as_view(),
         name="publisher_update",
+    ),
+    path(
+        "publishers/<pk>/delete/",
+        views.DeletePublisherView.as_view(),
+        name="publisher_delete",
     ),
 ]

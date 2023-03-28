@@ -58,7 +58,7 @@ class Books(models.Model):
         max_length=20, allow_unicode=True, unique=True, editable=False
     )
     translator = models.ForeignKey(
-        Translators, verbose_name="مترجم", on_delete=models.CASCADE
+        Translators, verbose_name="مترجم", on_delete=models.CASCADE, blank=True, null=True
     )
     author = models.ForeignKey(
         Authors, verbose_name="نویسنده", on_delete=models.CASCADE

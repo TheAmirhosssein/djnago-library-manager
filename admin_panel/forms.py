@@ -1,6 +1,6 @@
 from django import forms
 
-from library.models import Authors, Books
+from library.models import Authors, Books, Publishers
 
 
 class BooksForm(forms.ModelForm):
@@ -40,4 +40,22 @@ class AuthorsForm(forms.ModelForm):
                     "class": "form-control",
                 }
             )
+        }
+
+
+class PublishersForm(forms.ModelForm):
+    class Meta:
+        model = Publishers
+        fields = "__all__"
+        widgets = {
+            "title": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            "website": forms.URLInput(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
         }

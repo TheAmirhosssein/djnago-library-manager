@@ -22,4 +22,9 @@ urlpatterns = [
     path("books/search/", views.AuthorsListView.as_view(), name="author_search"),
     # publishers
     path("publishers/", views.PublishersListView.as_view(), name="publishers_admin"),
+    path(
+        "publishers/create/",
+        views.AddPublishersView.as_view(),
+        name="publishers_create",
+    ),
 ]

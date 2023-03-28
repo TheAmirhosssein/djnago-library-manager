@@ -104,3 +104,9 @@ class PublishersListView(ListView):
     template_name = "admin_panel/publishers/publishers_list.html"
     model = models.Publishers
     context_object_name = "publishers"
+
+
+class AddPublishersView(CreateView):
+    template_name = "admin_panel/publishers/publishers_create.html"
+    form_class = forms.PublishersForm
+    success_url = "/admin_panel/publishers/"

@@ -1,0 +1,26 @@
+{% extends 'admin_panel/basic.html' %}
+{% block title %}
+افزودن ناشر
+{% endblock %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        ایجاد ناشر
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> <a href="{% url 'admin' %}"> خانه </a></li>
+        <li> <a href="{%url 'publishers_admin' %}">ناشر ها</a></li>
+        <li>اضافه کردن</li>
+    </ol>
+</section>
+<section class="content">
+    <form action="{%url 'publishers_create' %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success btn-lg">
+            ثبت
+        </button>
+    </form>
+</section>
+
+{% endblock %}

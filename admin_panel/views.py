@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, ListView, TemplateView, UpdateView
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    ListView,
+    TemplateView,
+    UpdateView,
+)
 
 from admin_panel import forms
 from library import models
@@ -36,3 +42,9 @@ class UpdateBookView(UpdateView):
     template_name = "admin_panel/books/book_update.html"
     fields = "__all__"
     success_url = reverse_lazy("books_admin")
+
+
+class DeleteBookView(DeleteView):
+    template_name = "admin_panel/books/book_delete.html"
+    success_url = reverse_lazy("books_admin")
+    model = models.Books

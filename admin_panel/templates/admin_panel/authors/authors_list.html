@@ -7,7 +7,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i><a href="{% url "admin" %}"> خانه</a></li>
-        <li> کتاب ها</li>
+        <li> نویسنده ها</li>
     </ol>
 </section>
 <section class="content">
@@ -15,7 +15,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">کتاب ها</h3>
+                    <h3 class="box-title"> نویسنده ها</h3>
 
                     <div class="box-tools">
                         <form class="input-group input-group-sm" style="width: 150px;" action="{%url 'book_search'%}"
@@ -36,26 +36,22 @@
                         <tbody>
                             <tr>
                                 <th>شماره</th>
-                                <th>عنوان</th>
-                                <th>نویسنده</th>
-                                <th>ناشر</th>
+                                <th>نام</th>
                                 <th>اسلاگ</th>
                                 <th>حرکت ها</th>
                             </tr>
-                            {% for book in books %}
+                            {% for author in authors %}
                             <tr>
-                                <td>{{book.id}}</td>
-                                <td>{{book.title}}</td>
-                                <td>{{book.author}}</td>
-                                <td>{{book.publisher}}</td>
-                                <td>{{book.slug}}</td>
+                                <td>{{author.id}}</td>
+                                <td>{{author.name}}</td>
+                                <td>{{author.slug}}</td>
                                 <td>
-                                    <a href="{%url 'book_delete' book.pk %}" class="label-danger">
+                                    <a href="" class="label-danger">
                                         <span class="label label-danger">
                                             <i class="fa fa-trash"></i>
                                         </span>
                                     </a>
-                                    <a href="{%url 'book_update' book.pk %}" class="label-primary">
+                                    <a href="}" class="label-primary">
                                         <span class="label label-primary">
                                             <i class="fa  fa-pencil-square"></i>
                                         </span>

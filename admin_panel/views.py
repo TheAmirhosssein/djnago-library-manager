@@ -59,3 +59,10 @@ class SearchBookView(View):
             "search_word": key_word,
         }
         return render(request, "admin_panel/books/books_search.html", context=context)
+
+
+# authors
+class AuthorsListView(ListView):
+    template_name = "admin_panel/authors/authors_list.html"
+    model = models.Authors
+    context_object_name = "authors"

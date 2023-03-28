@@ -5,7 +5,7 @@ from django.utils.text import slugify
 class Authors(models.Model):
     name = models.CharField(max_length=50, verbose_name="نام")
     slug = models.SlugField(
-        db_index=True, null=False, default="", unique=True, editable=False
+        max_length=20, allow_unicode=True, unique=True, editable=False
     )
 
     def save(self, *args, **kwargs):
@@ -19,7 +19,7 @@ class Authors(models.Model):
 class Translators(models.Model):
     name = models.CharField(max_length=50, verbose_name="نام")
     slug = models.SlugField(
-        db_index=True, null=False, default="", unique=True, editable=False
+        max_length=20, allow_unicode=True, unique=True, editable=False
     )
 
     def save(self, *args, **kwargs):
@@ -33,7 +33,7 @@ class Translators(models.Model):
 class Genres(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
     slug = models.SlugField(
-        db_index=True, null=False, default="", unique=True, editable=False
+        max_length=20, allow_unicode=True, unique=True, editable=False
     )
 
     def save(self, *args, **kwargs):
@@ -58,7 +58,11 @@ class Books(models.Model):
         max_length=20, allow_unicode=True, unique=True, editable=False
     )
     translator = models.ForeignKey(
-        Translators, verbose_name="مترجم", on_delete=models.CASCADE, blank=True, null=True
+        Translators,
+        verbose_name="مترجم",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
     author = models.ForeignKey(
         Authors, verbose_name="نویسنده", on_delete=models.CASCADE

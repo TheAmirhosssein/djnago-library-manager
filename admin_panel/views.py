@@ -97,3 +97,10 @@ class SearchBookView(View):
         return render(
             request, "admin_panel/authors/authors_search.html", context=context
         )
+
+
+# publishers
+class PublishersListView(ListView):
+    template_name = "admin_panel/publishers/publishers_list.html"
+    model = models.Publishers
+    context_object_name = "publishers"

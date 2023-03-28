@@ -20,4 +20,6 @@ urlpatterns = [
         "authors/<pk>/delete/", views.DeleteAuthorView.as_view(), name="author_delete"
     ),
     path("books/search/", views.AuthorsListView.as_view(), name="author_search"),
+    # publishers
+    path("publishers/", views.PublishersListView.as_view(), name="publishers_admin"),
 ]

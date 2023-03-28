@@ -1,5 +1,5 @@
 {% extends 'admin_panel/basic.html' %}
-{% block title %}مدیریت نویسنده ها{% endblock title %}
+{% block title %}مدیریت ناشر ها{% endblock title %}
 {% block content %}
 <section class="content-header">
     <h1>
@@ -7,7 +7,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> <a href="{% url "admin" %}"> خانه </a></li>
-        <li> نویسنده ها</li>
+        <li> ناشر ها</li>
     </ol>
 </section>
 <section class="content">
@@ -15,7 +15,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title"> نویسنده ها</h3>
+                    <h3 class="box-title"> ناشر ها</h3>
 
                     <div class="box-tools">
                         <form class="input-group input-group-sm" style="width: 150px;" action="{%url 'author_search'%}"
@@ -36,22 +36,22 @@
                         <tbody>
                             <tr>
                                 <th>شماره</th>
-                                <th>نام</th>
-                                <th>اسلاگ</th>
+                                <th>عنوان</th>
+                                <th>وب سایت</th>
                                 <th>حرکت ها</th>
                             </tr>
-                            {% for author in authors %}
+                            {% for publisher in publishers %}
                             <tr>
-                                <td>{{author.id}}</td>
-                                <td>{{author.name}}</td>
-                                <td>{{author.slug}}</td>
+                                <td>{{publisher.id}}</td>
+                                <td>{{publisher.title}}</td>
+                                <td>{{publisher.website}}</td>
                                 <td>
-                                    <a href="{%url 'author_delete' author.pk%}" class="label-danger">
+                                    <a href="{%url 'author_delete' publisher.pk%}" class="label-danger">
                                         <span class="label label-danger">
                                             <i class="fa fa-trash"></i>
                                         </span>
                                     </a>
-                                    <a href="{%url 'author_update' author.pk%}" class="label-primary">
+                                    <a href="{%url 'author_update' publisher.pk%}" class="label-primary">
                                         <span class="label label-primary">
                                             <i class="fa  fa-pencil-square"></i>
                                         </span>

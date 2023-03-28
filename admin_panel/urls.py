@@ -27,4 +27,9 @@ urlpatterns = [
         views.AddPublishersView.as_view(),
         name="publishers_create",
     ),
+    path(
+        "publishers/<pk>/update",
+        views.UpdatePublisherView.as_view(),
+        name="publisher_update",
+    ),
 ]

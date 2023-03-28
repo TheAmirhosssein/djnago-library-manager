@@ -110,3 +110,10 @@ class AddPublishersView(CreateView):
     template_name = "admin_panel/publishers/publishers_create.html"
     form_class = forms.PublishersForm
     success_url = "/admin_panel/publishers/"
+
+
+class UpdatePublisherView(UpdateView):
+    model = models.Publishers
+    template_name = "admin_panel/publishers/publisher_update.html"
+    fields = "__all__"
+    success_url = reverse_lazy("publishers_admin")

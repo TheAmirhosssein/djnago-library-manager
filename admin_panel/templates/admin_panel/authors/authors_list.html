@@ -46,12 +46,12 @@
                                 <td>{{author.name}}</td>
                                 <td>{{author.slug}}</td>
                                 <td>
-                                    <a href="" class="label-danger">
+                                    <a href="{%url 'author_update' author.pk%}" class="label-danger">
                                         <span class="label label-danger">
                                             <i class="fa fa-trash"></i>
                                         </span>
                                     </a>
-                                    <a href="}" class="label-primary">
+                                    <a href="{%url 'author_update' author.pk%}" class="label-primary">
                                         <span class="label label-primary">
                                             <i class="fa  fa-pencil-square"></i>
                                         </span>

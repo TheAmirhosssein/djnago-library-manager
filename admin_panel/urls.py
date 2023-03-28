@@ -13,4 +13,7 @@ urlpatterns = [
     # authors
     path("authors/", views.AuthorsListView.as_view(), name="authors_admin"),
     path("authors/create/", views.AddAuthorsView.as_view(), name="authors_create"),
+    path(
+        "authors/<pk>/update/", views.UpdateAuthorView.as_view(), name="author_update"
+    ),
 ]

@@ -16,4 +16,7 @@ urlpatterns = [
     path(
         "authors/<pk>/update/", views.UpdateAuthorView.as_view(), name="author_update"
     ),
+    path(
+        "authors/<pk>/delete/", views.DeleteAuthorView.as_view(), name="author_delete"
+    ),
 ]

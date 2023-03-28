@@ -79,3 +79,9 @@ class UpdateAuthorView(UpdateView):
     template_name = "admin_panel/authors/author_update.html"
     fields = "__all__"
     success_url = reverse_lazy("authors_admin")
+
+
+class DeleteAuthorView(DeleteView):
+    template_name = "admin_panel/authors/author_delete.html"
+    success_url = reverse_lazy("authors_admin")
+    model = models.Authors

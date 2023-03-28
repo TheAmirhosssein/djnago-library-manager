@@ -6,6 +6,7 @@ from django.views.generic import (
     ListView,
     TemplateView,
     UpdateView,
+    View,
 )
 
 from admin_panel import forms
@@ -48,3 +49,13 @@ class DeleteBookView(DeleteView):
     template_name = "admin_panel/books/book_delete.html"
     success_url = reverse_lazy("books_admin")
     model = models.Books
+
+
+class SearchBookView(View):
+    def post(self, request):
+        key_word = request.POST["search"]
+        context = {
+            "books": models.Books.objects.filter(title__contains=key_word),
+            "search_word": key_word,
+        }
+        return render(request, "admin_panel/books/books_search.html", context=context)

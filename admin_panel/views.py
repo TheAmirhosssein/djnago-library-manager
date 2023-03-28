@@ -1,13 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import (
-    CreateView,
-    DeleteView,
-    ListView,
-    TemplateView,
-    UpdateView,
-    View,
-)
+from django.views.generic import (CreateView, DeleteView, ListView,
+                                  TemplateView, UpdateView, View)
 
 from admin_panel import forms
 from library import models
@@ -66,3 +60,9 @@ class AuthorsListView(ListView):
     template_name = "admin_panel/authors/authors_list.html"
     model = models.Authors
     context_object_name = "authors"
+
+
+class AddAuthorsView(CreateView):
+    template_name = "admin_panel/authors/authors_create.html"
+    form_class = forms.AuthorsForm
+    success_url = "/admin_panel/authors/"

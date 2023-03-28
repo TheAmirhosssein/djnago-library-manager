@@ -3,10 +3,10 @@
 {% block content %}
 <section class="content-header">
     <h1>
-        صفحه شروع
+        نویسنده ها
     </h1>
     <ol class="breadcrumb">
-        <li><i class="fa fa-dashboard"></i><a href="{% url "admin" %}"> خانه</a></li>
+        <li><i class="fa fa-dashboard"></i> <a href="{% url "admin" %}"> خانه </a></li>
         <li> نویسنده ها</li>
     </ol>
 </section>
@@ -28,7 +28,7 @@
                             </div>
                         </form>
                     </div>
-                    <a class="btn btn-info btn-xs" href="{% url 'books_create' %}">اضافه کردن</a>
+                    <a class="btn btn-info btn-xs" href="{% url 'authors_create' %}">اضافه کردن</a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">

@@ -12,4 +12,5 @@ urlpatterns = [
     path("books/search/", views.SearchBookView.as_view(), name="book_search"),
     # authors
     path("authors/", views.AuthorsListView.as_view(), name="authors_admin"),
+    path("authors/create/", views.AddAuthorsView.as_view(), name="authors_create"),
 ]

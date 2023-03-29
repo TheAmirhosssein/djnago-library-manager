@@ -87,7 +87,7 @@ class DeleteAuthorView(DeleteView):
     model = models.Authors
 
 
-class SearchBookView(View):
+class SearchAuthorView(View):
     def post(self, request):
         key_word = request.POST["search"]
         context = {
@@ -123,3 +123,15 @@ class DeletePublisherView(DeleteView):
     template_name = "admin_panel/publishers/publisher_delete.html"
     success_url = reverse_lazy("publishers_admin")
     model = models.Publishers
+
+
+class SearchPublishersView(View):
+    def post(self, request):
+        key_word = request.POST["search"]
+        context = {
+            "publishers": models.Publishers.objects.filter(title__contains=key_word),
+            "search_word": key_word,
+        }
+        return render(
+            request, "admin_panel/publishers/publishers_search.html", context=context
+        )

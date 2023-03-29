@@ -19,7 +19,7 @@ urlpatterns = [
     path(
         "authors/<pk>/delete/", views.DeleteAuthorView.as_view(), name="author_delete"
     ),
-    path("books/search/", views.AuthorsListView.as_view(), name="author_search"),
+    path("authors/search/", views.SearchAuthorView.as_view(), name="author_search"),
     # publishers
     path("publishers/", views.PublishersListView.as_view(), name="publishers_admin"),
     path(
@@ -36,5 +36,10 @@ urlpatterns = [
         "publishers/<pk>/delete/",
         views.DeletePublisherView.as_view(),
         name="publisher_delete",
+    ),
+    path(
+        "publishers/search/",
+        views.SearchPublishersView.as_view(),
+        name="publisher_search",
     ),
 ]

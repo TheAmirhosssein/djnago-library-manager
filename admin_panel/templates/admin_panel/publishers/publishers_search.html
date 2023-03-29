@@ -7,7 +7,8 @@
     </h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> <a href="{% url "admin" %}"> خانه </a></li>
-        <li> ناشر ها</li>
+        <li><a href="{% url 'publishers_admin' %}">ناشر ها </a> </li>
+        <li>جستوجو</li>
     </ol>
 </section>
 <section class="content">
@@ -21,7 +22,8 @@
                         <form class="input-group input-group-sm" style="width: 150px;"
                             action="{%url 'publisher_search'%}" method="post">
                             {%csrf_token%}
-                            <input type="search" name='search' class="form-control pull-right" placeholder="جستجو">
+                            <input type="search" name='search' class="form-control pull-right"
+                                placeholder="{{search_word}}">
 
                             <div class="input-group-btn">
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>

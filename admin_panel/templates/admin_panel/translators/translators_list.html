@@ -1,0 +1,72 @@
+{% extends 'admin_panel/basic.html' %}
+{% block title %}مدیریت ناشر ها{% endblock title %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        مترجم ها
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> <a href="{% url "admin" %}"> خانه </a></li>
+        <li> مترجم ها</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"> مترجم ها</h3>
+
+                    <div class="box-tools">
+                        <form class="input-group input-group-sm" style="width: 150px;"
+                            action="{%url 'publisher_search'%}" method="post">
+                            {%csrf_token%}
+                            <input type="search" name='search' class="form-control pull-right" placeholder="جستجو">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <a class="btn btn-info btn-xs" href="{% url 'publishers_create' %}">اضافه کردن</a>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th>شماره</th>
+                                <th>نام</th>
+                                <th>اسلاگ</th>
+                                <th>حرکت ها</th>
+                            </tr>
+                            {% for translator in translators %}
+                            <tr>
+                                <td>{{translator.id}}</td>
+                                <td>{{translator.name}}</td>
+                                <td>{{translator.slug}}</td>
+                                <td>
+                                    <a href="{%url 'publisher_delete' translator.pk%}" class="label-danger">
+                                        <span class="label label-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </span>
+                                    </a>
+                                    <a href="{%url 'publisher_update' translator.pk%}" class="label-primary">
+                                        <span class="label label-primary">
+                                            <i class="fa  fa-pencil-square"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

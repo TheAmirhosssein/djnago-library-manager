@@ -135,3 +135,10 @@ class SearchPublishersView(View):
         return render(
             request, "admin_panel/publishers/publishers_search.html", context=context
         )
+
+
+# translators
+class TranslatorListView(ListView):
+    template_name = "admin_panel/translators/translators_list.html"
+    model = models.Translators
+    context_object_name = "translators"

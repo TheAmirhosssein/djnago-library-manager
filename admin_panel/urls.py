@@ -42,4 +42,6 @@ urlpatterns = [
         views.SearchPublishersView.as_view(),
         name="publisher_search",
     ),
+    # translators
+    path("translators/", views.TranslatorListView.as_view(), name="translators_admin"),
 ]

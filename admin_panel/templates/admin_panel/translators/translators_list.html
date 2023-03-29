@@ -1,5 +1,5 @@
 {% extends 'admin_panel/basic.html' %}
-{% block title %}مدیریت ناشر ها{% endblock title %}
+{% block title %}مدیریت مترجم ها{% endblock title %}
 {% block content %}
 <section class="content-header">
     <h1>
@@ -28,7 +28,7 @@
                             </div>
                         </form>
                     </div>
-                    <a class="btn btn-info btn-xs" href="{% url 'publishers_create' %}">اضافه کردن</a>
+                    <a class="btn btn-info btn-xs" href="{% url 'translators_create' %}">اضافه کردن</a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -51,7 +51,7 @@
                                             <i class="fa fa-trash"></i>
                                         </span>
                                     </a>
-                                    <a href="{%url 'publisher_update' translator.pk%}" class="label-primary">
+                                    <a href="{%url 'translator_update' translator.pk%}" class="label-primary">
                                         <span class="label label-primary">
                                             <i class="fa  fa-pencil-square"></i>
                                         </span>

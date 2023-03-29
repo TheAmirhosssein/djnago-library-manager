@@ -44,4 +44,19 @@ urlpatterns = [
     ),
     # translators
     path("translators/", views.TranslatorListView.as_view(), name="translators_admin"),
+    path(
+        "translators/create/",
+        views.AddTranslatorView.as_view(),
+        name="translators_create",
+    ),
+    path(
+        "translators/<pk>/update",
+        views.UpdateTranslatorView.as_view(),
+        name="translator_update",
+    ),
+    path(
+        "translators/<pk>/delete/",
+        views.DeleteTranslatorView.as_view(),
+        name="translator_delete",
+    ),
 ]

@@ -142,3 +142,22 @@ class TranslatorListView(ListView):
     template_name = "admin_panel/translators/translators_list.html"
     model = models.Translators
     context_object_name = "translators"
+
+
+class AddTranslatorView(CreateView):
+    template_name = "admin_panel/translators/translators_create.html"
+    form_class = forms.TranslatorsForm
+    success_url = "/admin_panel/translators/"
+
+
+class UpdateTranslatorView(UpdateView):
+    model = models.Translators
+    template_name = "admin_panel/translators/translator_update.html"
+    fields = "__all__"
+    success_url = reverse_lazy("translators_admin")
+
+
+class DeleteTranslatorView(DeleteView):
+    model = models.Translators
+    template_name = "admin_panel/translators/translator_delete.html"
+    success_url = reverse_lazy("translators_admin")

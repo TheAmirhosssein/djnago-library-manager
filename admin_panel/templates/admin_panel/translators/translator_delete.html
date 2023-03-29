@@ -1,0 +1,30 @@
+{% extends 'admin_panel/basic.html' %}
+{% load widget_tweaks %}
+{% block title %}
+حذف مترجم
+{% endblock %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        صفحه شروع
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> <a href="{% url 'admin' %}"> خانه </a></li>
+        <li> <a href="{%url 'publishers_admin' %}">مترجم ها</a></li>
+        <li>حذف کردن</li>
+    </ol>
+</section>
+<section class="content">
+    <form method="post" action="{% url 'translator_delete' object.pk %}">
+        {% csrf_token %}
+        <h3>آیا از حذف '{{object.title}}' مطمئنید؟</h3>
+        <div>
+            <button type="submit" class="btn btn-danger btn-lg">بله</button>
+            <a href="{% url 'translator_admin' %}" class="btn btn-success btn-lg">
+                <span>خیر</span>
+            </a>
+        </div>
+    </form>
+</section>
+
+{% endblock %}

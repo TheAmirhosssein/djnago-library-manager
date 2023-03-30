@@ -199,3 +199,13 @@ class DeleteGenreView(DeleteView):
     model = models.Genres
     template_name = "admin_panel/genres/genres_delete.html"
     success_url = reverse_lazy("genres_admin")
+
+
+class SearchGenresView(View):
+    def post(self, request):
+        key_word = request.POST["search"]
+        context = {
+            "genres": models.Genres.objects.filter(title__contains=key_word),
+            "search_word": key_word,
+        }
+        return render(request, "admin_panel/genres/genres_search.html", context=context)

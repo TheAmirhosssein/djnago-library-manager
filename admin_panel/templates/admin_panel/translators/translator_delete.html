@@ -6,7 +6,7 @@
 {% block content %}
 <section class="content-header">
     <h1>
-        صفحه شروع
+        حذف مترجم
     </h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> <a href="{% url 'admin' %}"> خانه </a></li>
@@ -20,7 +20,7 @@
         <h3>آیا از حذف '{{object.title}}' مطمئنید؟</h3>
         <div>
             <button type="submit" class="btn btn-danger btn-lg">بله</button>
-            <a href="{% url 'translator_admin' %}" class="btn btn-success btn-lg">
+            <a href="{% url 'translators_admin' %}" class="btn btn-success btn-lg">
                 <span>خیر</span>
             </a>
         </div>

@@ -4,9 +4,7 @@ from django.utils.text import slugify
 
 class Authors(models.Model):
     name = models.CharField(max_length=50, verbose_name="نام")
-    slug = models.SlugField(
-        max_length=20, allow_unicode=True, unique=True, editable=False
-    )
+    slug = models.SlugField(allow_unicode=True, unique=True, editable=False)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=True)
@@ -18,9 +16,7 @@ class Authors(models.Model):
 
 class Translators(models.Model):
     name = models.CharField(max_length=50, verbose_name="نام")
-    slug = models.SlugField(
-        max_length=20, allow_unicode=True, unique=True, editable=False
-    )
+    slug = models.SlugField(allow_unicode=True, unique=True, editable=False)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=True)
@@ -54,9 +50,7 @@ class Publishers(models.Model):
 
 class Books(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
-    slug = models.SlugField(
-        max_length=20, allow_unicode=True, unique=True, editable=False
-    )
+    slug = models.SlugField(allow_unicode=True, unique=True, editable=False)
     translator = models.ForeignKey(
         Translators,
         verbose_name="مترجم",

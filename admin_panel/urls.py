@@ -65,5 +65,6 @@ urlpatterns = [
         name="translator_search",
     ),
     # genres
-    path("genres/", views.GenresListView.as_view(), name="genres_list"),
+    path("genres/", views.GenresListView.as_view(), name="genres_admin"),
+    path("genres/create/", views.AddGenresView.as_view(), name="genres_create"),
 ]

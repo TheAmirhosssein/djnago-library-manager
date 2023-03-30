@@ -182,3 +182,9 @@ class GenresListView(ListView):
     model = models.Genres
     template_name = "admin_panel/genres/genres_list.html"
     context_object_name = "genres"
+
+
+class AddGenresView(CreateView):
+    form_class = forms.GenresForm
+    template_name = "admin_panel/genres/genres_create.html"
+    success_url = "/admin_panel/genres/"

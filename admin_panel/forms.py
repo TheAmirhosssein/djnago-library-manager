@@ -1,6 +1,6 @@
 from django import forms
 
-from library.models import Authors, Books, Publishers, Translators
+from library.models import Authors, Books, Genres, Publishers, Translators
 
 
 class BooksForm(forms.ModelForm):
@@ -72,3 +72,10 @@ class TranslatorsForm(forms.ModelForm):
                 }
             )
         }
+
+
+class GenresForm(forms.ModelForm):
+    class Meta:
+        model = Genres
+        exclude = ["slug"]
+        widgets = {"title": forms.TextInput(attrs={"class": "form-control"})}

@@ -82,48 +82,59 @@
     </div>
 
     <div class="box">
-        <div>
-            <div class="box-header">
-                <h3 class="box-title">لیست کتاب ها</h3>
+        <div class="box-header">
+            <h3 class="box-title">کتاب ها</h3>
 
+            <div class="box-tools">
+                <form class="input-group input-group-sm" style="width: 150px;" action="{%url 'book_search'%}"
+                    method="post">
+                    {%csrf_token%}
+                    <input type="search" name='search' class="form-control pull-right" placeholder="جستجو">
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <th>شماره</th>
-                            <th>عنوان</th>
-                            <th>نوینسده</th>
-                            <th>ناشر</th>
-                            <th>حرکت ها</th>
-                        </tr>
-                        {% for book in books %}
-                        <tr>
-                            <td>{{book.id}}</td>
-                            <td>{{book.title}}</td>
-                            <td>{{book.author}}</td>
-                            <td>{{book.publisher}}</td>
-                            <td>
-                                <a href="" class="label-danger">
-                                    <span class="label label-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </span>
-                                </a>
-                                <a href="" class="label-primary">
-                                    <span class="label label-primary">
-                                        <i class="fa  fa-pencil-square"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <br>
-            <!-- /.box-body -->
+            <a class="btn btn-info btn-xs" href="{% url 'books_create' %}">اضافه کردن</a>
         </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>شماره</th>
+                        <th>عنوان</th>
+                        <th>نویسنده</th>
+                        <th>ناشر</th>
+                        <th>اسلاگ</th>
+                        <th>حرکت ها</th>
+                    </tr>
+                    {% for book in books %}
+                    <tr>
+                        <td>{{book.id}}</td>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.publisher}}</td>
+                        <td>{{book.slug}}</td>
+                        <td>
+                            <a href="{%url 'book_delete' book.pk %}" class="label-danger">
+                                <span class="label label-danger">
+                                    <i class="fa fa-trash"></i>
+                                </span>
+                            </a>
+                            <a href="{%url 'book_update' book.pk %}" class="label-primary">
+                                <span class="label label-primary">
+                                    <i class="fa  fa-pencil-square"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
     </div>
 </section>
 

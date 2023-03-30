@@ -176,8 +176,6 @@ class SearchTranslatorsView(View):
 
 
 # genres
-
-
 class GenresListView(ListView):
     model = models.Genres
     template_name = "admin_panel/genres/genres_list.html"
@@ -188,3 +186,10 @@ class AddGenresView(CreateView):
     form_class = forms.GenresForm
     template_name = "admin_panel/genres/genres_create.html"
     success_url = "/admin_panel/genres/"
+
+
+class UpdateGenresView(UpdateView):
+    model = models.Genres
+    template_name = "admin_panel/genres/genres_update.html"
+    fields = "__all__"
+    success_url = reverse_lazy("genres_admin")

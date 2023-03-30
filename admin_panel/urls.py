@@ -67,4 +67,5 @@ urlpatterns = [
     # genres
     path("genres/", views.GenresListView.as_view(), name="genres_admin"),
     path("genres/create/", views.AddGenresView.as_view(), name="genres_create"),
+    path("genres/<pk>/update/", views.UpdateGenresView.as_view(), name="genre_update"),
 ]

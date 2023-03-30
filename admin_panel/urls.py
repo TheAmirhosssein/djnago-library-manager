@@ -59,4 +59,9 @@ urlpatterns = [
         views.DeleteTranslatorView.as_view(),
         name="translator_delete",
     ),
+    path(
+        "translators/search/",
+        views.SearchTranslatorsView.as_view(),
+        name="translator_search",
+    ),
 ]

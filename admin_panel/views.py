@@ -161,3 +161,15 @@ class DeleteTranslatorView(DeleteView):
     model = models.Translators
     template_name = "admin_panel/translators/translator_delete.html"
     success_url = reverse_lazy("translators_admin")
+
+
+class SearchTranslatorsView(View):
+    def post(self, request):
+        key_word = request.POST["search"]
+        context = {
+            "translators": models.Translators.objects.filter(name__contains=key_word),
+            "search_word": key_word,
+        }
+        return render(
+            request, "admin_panel/translators/translators_search.html", context=context
+        )

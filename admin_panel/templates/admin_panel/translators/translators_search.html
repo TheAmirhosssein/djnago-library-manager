@@ -7,7 +7,8 @@
     </h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> <a href="{% url "admin" %}"> خانه </a></li>
-        <li> مترجم ها</li>
+        <li><a href="{% url 'translators_admin'}">مترجم ها </a></li>
+        <li>جستوجو</li>
     </ol>
 </section>
 <section class="content">
@@ -20,15 +21,15 @@
                     <div class="box-tools">
                         <form class="input-group input-group-sm" style="width: 150px;"
                             action="{%url 'translator_search'%}" method="post">
-                            {%csrf_token%}
-                            <input type="search" name='search' class="form-control pull-right" placeholder="جستجو">
+                {%csrf_token%}
+                <input type="search" name='search' class="form-control pull-right" placeholder="{{search_word}}">
 
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                    <a class="btn btn-info btn-xs" href="{% url 'translators_create' %}">اضافه کردن</a>
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+                </form>
+                </div>
+                <a class="btn btn-info btn-xs" href="{% url 'translators_create' %}">اضافه کردن</a>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -63,10 +64,10 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-    </div>
+                </div>
+                <!-- /.box -->
+                </div>
+                </div>
 </section>
 
 {% endblock content %}

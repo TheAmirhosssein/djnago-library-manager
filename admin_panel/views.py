@@ -193,3 +193,9 @@ class UpdateGenresView(UpdateView):
     template_name = "admin_panel/genres/genres_update.html"
     fields = "__all__"
     success_url = reverse_lazy("genres_admin")
+
+
+class DeleteGenreView(DeleteView):
+    model = models.Genres
+    template_name = "admin_panel/genres/genres_delete.html"
+    success_url = reverse_lazy("genres_admin")

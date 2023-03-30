@@ -129,11 +129,11 @@ desired effect
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{% url "books_admin" %}">کتاب ها</a></li>
-              <li><a href="#">نویسنده ها</a></li>
-              <li><a href="#">مترجمان ها</a></li>
-              <li><a href="#">ناشر ها</a></li>
-              <li><a href="#">ژانر ها</a></li>
+              <li><a href="{% url 'books_admin' %}">کتاب ها</a></li>
+              <li><a href="{% url 'authors_admin' %}">نویسنده ها</a></li>
+              <li><a href="{% url 'translators_admin' %}">مترجمان ها</a></li>
+              <li><a href="{% url 'publishers_admin' %}">ناشر ها</a></li>
+              <li><a href="{% url 'genres_admin' %}">ژانر ها</a></li>
             </ul>
           </li>
         </ul>
@@ -148,7 +148,8 @@ desired effect
       {% block content %}{% endblock content %}
       <!-- /.content -->
     </div>
-    <div class="control-sidebar-bg"></div>
+    <div class=" control-sidebar-bg">
+    </div>
   </div>
   <!-- ./wrapper -->
 

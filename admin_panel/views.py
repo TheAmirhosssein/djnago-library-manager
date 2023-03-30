@@ -173,3 +173,12 @@ class SearchTranslatorsView(View):
         return render(
             request, "admin_panel/translators/translators_search.html", context=context
         )
+
+
+# genres
+
+
+class GenresListView(ListView):
+    model = models.Genres
+    template_name = "admin_panel/genres/genres_list.html"
+    context_object_name = "genres"

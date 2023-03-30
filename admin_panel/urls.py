@@ -64,4 +64,6 @@ urlpatterns = [
         views.SearchTranslatorsView.as_view(),
         name="translator_search",
     ),
+    # genres
+    path("genres/", views.GenresListView.as_view(), name="genres_list"),
 ]

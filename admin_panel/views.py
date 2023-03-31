@@ -1,4 +1,6 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (
@@ -241,3 +243,11 @@ class SearchGenresView(PermissionRequiredMixin, View):
             "search_word": key_word,
         }
         return render(request, "admin_panel/genres/genres_search.html", context=context)
+
+
+# users
+class UsersListView(PermissionRequiredMixin, ListView):
+    permission_required = "account.action_all"
+    model = User
+    template_name = "admin_panel/users/users_list.html"
+    context_object_name = "users"

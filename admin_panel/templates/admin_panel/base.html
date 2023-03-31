@@ -127,7 +127,7 @@ desired effect
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
           <!-- Optionally, you can add icons to the links -->
-          <li class="treeview {% if request.resolver_match.url_name != "admin" %}active{% endif %}">
+          <li class="treeview">
             <a href="#"><i class="fa fa-book"></i> <span>کتابخانه</span>
               <span class="pull-left-container">
                 <i class="fa fa-angle-right pull-left"></i>
@@ -140,6 +140,11 @@ desired effect
               <li><a href="{% url 'publishers_admin' %}">ناشر ها</a></li>
               <li><a href="{% url 'genres_admin' %}">ژانر ها</a></li>
             </ul>
+          </li>
+          <li class="{% if request.resolver_match.url_name == "users_admin" %}active{% endif %}">
+            <a href="{% url 'users_admin' %}"><i class="fa fa-users"></i>
+              <span>کاربر ها</span>
+            </a>
           </li>
         </ul>
         <!-- /.sidebar-menu -->

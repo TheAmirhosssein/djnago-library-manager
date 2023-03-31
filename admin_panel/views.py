@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (
@@ -13,7 +14,8 @@ from admin_panel import forms
 from library import models
 
 
-class DashboardView(TemplateView):
+class DashboardView(PermissionRequiredMixin, TemplateView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/admin_panel.html"
 
     def get_context_data(self, **kwargs):
@@ -26,32 +28,38 @@ class DashboardView(TemplateView):
 
 
 # books view
-class BooksListView(ListView):
+class BooksListView(PermissionRequiredMixin, ListView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/books/books_list.html"
     model = models.Books
     context_object_name = "books"
 
 
-class AddBookView(CreateView):
+class AddBookView(PermissionRequiredMixin, CreateView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/books/books_create.html"
     form_class = forms.BooksForm
     success_url = "/admin_panel/books/"
 
 
-class UpdateBookView(UpdateView):
+class UpdateBookView(PermissionRequiredMixin, UpdateView):
+    permission_required = "library.action_all"
     model = models.Books
     template_name = "admin_panel/books/book_update.html"
     fields = "__all__"
     success_url = reverse_lazy("books_admin")
 
 
-class DeleteBookView(DeleteView):
+class DeleteBookView(PermissionRequiredMixin, DeleteView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/books/book_delete.html"
     success_url = reverse_lazy("books_admin")
     model = models.Books
 
 
-class SearchBookView(View):
+class SearchBookView(PermissionRequiredMixin, View):
+    permission_required = "library.action_all"
+
     def post(self, request):
         key_word = request.POST["search"]
         context = {
@@ -62,32 +70,38 @@ class SearchBookView(View):
 
 
 # authors
-class AuthorsListView(ListView):
+class AuthorsListView(PermissionRequiredMixin, ListView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/authors/authors_list.html"
     model = models.Authors
     context_object_name = "authors"
 
 
-class AddAuthorsView(CreateView):
+class AddAuthorsView(PermissionRequiredMixin, CreateView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/authors/authors_create.html"
     form_class = forms.AuthorsForm
     success_url = "/admin_panel/authors/"
 
 
-class UpdateAuthorView(UpdateView):
+class UpdateAuthorView(PermissionRequiredMixin, UpdateView):
+    permission_required = "library.action_all"
     model = models.Authors
     template_name = "admin_panel/authors/author_update.html"
     fields = "__all__"
     success_url = reverse_lazy("authors_admin")
 
 
-class DeleteAuthorView(DeleteView):
+class DeleteAuthorView(PermissionRequiredMixin, DeleteView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/authors/author_delete.html"
     success_url = reverse_lazy("authors_admin")
     model = models.Authors
 
 
-class SearchAuthorView(View):
+class SearchAuthorView(PermissionRequiredMixin, View):
+    permission_required = "library.action_all"
+
     def post(self, request):
         key_word = request.POST["search"]
         context = {
@@ -100,32 +114,38 @@ class SearchAuthorView(View):
 
 
 # publishers
-class PublishersListView(ListView):
+class PublishersListView(PermissionRequiredMixin, ListView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/publishers/publishers_list.html"
     model = models.Publishers
     context_object_name = "publishers"
 
 
-class AddPublishersView(CreateView):
+class AddPublishersView(PermissionRequiredMixin, CreateView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/publishers/publishers_create.html"
     form_class = forms.PublishersForm
     success_url = "/admin_panel/publishers/"
 
 
-class UpdatePublisherView(UpdateView):
+class UpdatePublisherView(PermissionRequiredMixin, UpdateView):
+    permission_required = "library.action_all"
     model = models.Publishers
     template_name = "admin_panel/publishers/publisher_update.html"
     fields = "__all__"
     success_url = reverse_lazy("publishers_admin")
 
 
-class DeletePublisherView(DeleteView):
+class DeletePublisherView(PermissionRequiredMixin, DeleteView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/publishers/publisher_delete.html"
     success_url = reverse_lazy("publishers_admin")
     model = models.Publishers
 
 
-class SearchPublishersView(View):
+class SearchPublishersView(PermissionRequiredMixin, View):
+    permission_required = "library.action_all"
+
     def post(self, request):
         key_word = request.POST["search"]
         context = {
@@ -138,32 +158,38 @@ class SearchPublishersView(View):
 
 
 # translators
-class TranslatorListView(ListView):
+class TranslatorListView(PermissionRequiredMixin, ListView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/translators/translators_list.html"
     model = models.Translators
     context_object_name = "translators"
 
 
-class AddTranslatorView(CreateView):
+class AddTranslatorView(PermissionRequiredMixin, CreateView):
+    permission_required = "library.action_all"
     template_name = "admin_panel/translators/translators_create.html"
     form_class = forms.TranslatorsForm
     success_url = "/admin_panel/translators/"
 
 
-class UpdateTranslatorView(UpdateView):
+class UpdateTranslatorView(PermissionRequiredMixin, UpdateView):
+    permission_required = "library.action_all"
     model = models.Translators
     template_name = "admin_panel/translators/translator_update.html"
     fields = "__all__"
     success_url = reverse_lazy("translators_admin")
 
 
-class DeleteTranslatorView(DeleteView):
+class DeleteTranslatorView(PermissionRequiredMixin, DeleteView):
+    permission_required = "library.action_all"
     model = models.Translators
     template_name = "admin_panel/translators/translator_delete.html"
     success_url = reverse_lazy("translators_admin")
 
 
-class SearchTranslatorsView(View):
+class SearchTranslatorsView(PermissionRequiredMixin, View):
+    permission_required = "library.action_all"
+
     def post(self, request):
         key_word = request.POST["search"]
         context = {
@@ -176,32 +202,38 @@ class SearchTranslatorsView(View):
 
 
 # genres
-class GenresListView(ListView):
+class GenresListView(PermissionRequiredMixin, ListView):
+    permission_required = "library.action_all"
     model = models.Genres
     template_name = "admin_panel/genres/genres_list.html"
     context_object_name = "genres"
 
 
-class AddGenresView(CreateView):
+class AddGenresView(PermissionRequiredMixin, CreateView):
+    permission_required = "library.action_all"
     form_class = forms.GenresForm
     template_name = "admin_panel/genres/genres_create.html"
     success_url = "/admin_panel/genres/"
 
 
-class UpdateGenresView(UpdateView):
+class UpdateGenresView(PermissionRequiredMixin, UpdateView):
+    permission_required = "library.action_all"
     model = models.Genres
     template_name = "admin_panel/genres/genres_update.html"
     fields = "__all__"
     success_url = reverse_lazy("genres_admin")
 
 
-class DeleteGenreView(DeleteView):
+class DeleteGenreView(PermissionRequiredMixin, DeleteView):
+    permission_required = "library.action_all"
     model = models.Genres
     template_name = "admin_panel/genres/genres_delete.html"
     success_url = reverse_lazy("genres_admin")
 
 
-class SearchGenresView(View):
+class SearchGenresView(PermissionRequiredMixin, View):
+    permission_required = "library.action_all"
+
     def post(self, request):
         key_word = request.POST["search"]
         context = {

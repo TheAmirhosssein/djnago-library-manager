@@ -72,4 +72,5 @@ urlpatterns = [
     path("genres/search/", views.SearchGenresView.as_view(), name="genre_search"),
     # users
     path("users/", views.UsersListView.as_view(), name="users_admin"),
+    path("users/create/", views.AddUsersView.as_view(), name="users_create"),
 ]

@@ -251,3 +251,10 @@ class UsersListView(PermissionRequiredMixin, ListView):
     model = User
     template_name = "admin_panel/users/users_list.html"
     context_object_name = "users"
+
+
+class AddUsersView(PermissionRequiredMixin, CreateView):
+    permission_required = "account.action_all"
+    form_class = UserCreationForm
+    template_name = "admin_panel/users/users_create.html"
+    success_url = "/admin_panel/users/"

@@ -1,0 +1,44 @@
+{% extends 'admin_panel/base.html' %}
+{% load widget_tweaks %}
+{% block title %}
+ویرایش کاربر
+{% endblock %}
+{% block content %}
+<section class="content-header">
+    <h1>
+        ویرایش کاربر
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> <a href="{% url 'admin' %}"> خانه </a></li>
+        <li> <a href="{%url 'users_admin' %}">کاربر ها</a></li>
+        <li>ویرایش کاربر</li>
+    </ol>
+</section>
+<section class="content">
+    <form action="{% url 'user_update' object.pk %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <!-- {{form.as_p}} -->
+        {%for field in form %}
+        <div class="form-group">
+            <label for="id_{{ field.name }}">{{ field.label }}</label>
+            {%if field.name == "is_superuser" or field.name == "is_active" or field.name == "is_staff"%}
+            {{field}}
+            {%else%}
+            {{field|add_class:"form-control"}}
+            {%endif%}
+            <div>
+                <ul>
+                    {% for error in field.errors %}
+                    <li class="text-danger">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {%endfor%}
+        <button type="submit" class="btn btn-success btn-lg">
+            ثبت
+        </button>
+    </form>
+</section>
+
+{% endblock %}

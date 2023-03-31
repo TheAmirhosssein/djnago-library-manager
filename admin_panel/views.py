@@ -3,14 +3,8 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import (
-    CreateView,
-    DeleteView,
-    ListView,
-    TemplateView,
-    UpdateView,
-    View,
-)
+from django.views.generic import (CreateView, DeleteView, ListView,
+                                  TemplateView, UpdateView, View)
 
 from admin_panel import forms
 from library import models
@@ -258,3 +252,11 @@ class AddUsersView(PermissionRequiredMixin, CreateView):
     form_class = UserCreationForm
     template_name = "admin_panel/users/users_create.html"
     success_url = "/admin_panel/users/"
+
+
+class UpdateUserView(PermissionRequiredMixin, UpdateView):
+    permission_required = "account.action_all"
+    model = User
+    template_name = "admin_panel/users/user_update.html"
+    fields = "__all__"
+    success_url = reverse_lazy("users_admin")

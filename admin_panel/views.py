@@ -273,3 +273,15 @@ class DeleteUserView(PermissionRequiredMixin, DeleteView):
     model = User
     template_name = "admin_panel/users/user_delete.html"
     success_url = reverse_lazy("users_admin")
+
+
+class SearchUsersView(PermissionRequiredMixin, View):
+    permission_required = "account.action_all"
+
+    def post(self, request):
+        key_word = request.POST["search"]
+        context = {
+            "users": User.objects.filter(username__contains=key_word),
+            "search_word": key_word,
+        }
+        return render(request, "admin_panel/users/users_search.html", context=context)

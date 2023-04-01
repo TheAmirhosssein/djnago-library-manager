@@ -26,6 +26,7 @@ class BooksForm(forms.ModelForm):
             ),
             "author": forms.Select(attrs={"class": "form-control"}),
             "publisher": forms.Select(attrs={"class": "form-control"}),
+            "book_user": forms.Select(attrs={"class": "form-control"}),
             "genres": forms.SelectMultiple(attrs={"class": "form-control"}),
         }
 

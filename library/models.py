@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils.text import slugify
 
@@ -51,6 +52,13 @@ class Publishers(models.Model):
 class Books(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان")
     slug = models.SlugField(allow_unicode=True, unique=True, editable=False)
+    book_user = models.ForeignKey(
+        User,
+        verbose_name="کاربر",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
     translator = models.ForeignKey(
         Translators,
         verbose_name="مترجم",

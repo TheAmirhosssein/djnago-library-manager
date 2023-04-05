@@ -38,17 +38,15 @@ class BooksListView(PermissionRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(BooksListView, self).get_context_data()
-        context["books"] = models.Books.objects.all()
         context["authors"] = models.Authors.objects.all()
-        context["publishers"] = models.Publishers.objects.all()
-        context["translators"] = models.Translators.objects.all()
+        # context["publishers"] = models.Publishers.objects.all()
+        # context["translators"] = models.Translators.objects.all()
         return context
 
     def get_queryset(self):
         query = super(BooksListView, self).get_queryset()
         author = self.kwargs.get("author")
         query = query.filter(author__slug__iexact=author)
-        print(query)
         return query
 
 

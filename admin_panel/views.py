@@ -3,14 +3,8 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import (
-    CreateView,
-    DeleteView,
-    ListView,
-    TemplateView,
-    UpdateView,
-    View,
-)
+from django.views.generic import (CreateView, DeleteView, ListView,
+                                  TemplateView, UpdateView, View)
 
 from admin_panel import forms
 from library import models
@@ -39,14 +33,13 @@ class BooksListView(PermissionRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super(BooksListView, self).get_context_data()
         context["authors"] = models.Authors.objects.all()
-        # context["publishers"] = models.Publishers.objects.all()
-        # context["translators"] = models.Translators.objects.all()
         return context
 
     def get_queryset(self):
         query = super(BooksListView, self).get_queryset()
         author = self.kwargs.get("author")
-        query = query.filter(author__slug__iexact=author)
+        if author is not None:
+            query = query.filter(author__slug__iexact=author)
         return query
 
 

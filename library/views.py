@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
+from components.wikipedia_api import get_wikipedia_page
 from library import models
 
 
@@ -19,6 +20,12 @@ class BookDetailView(DetailView):
 class AuthorView(DetailView):
     template_name = "library/author.html"
     model = models.Authors
+
+    def get_context_data(self, **kwargs):
+        context = super(AuthorView, self).get_context_data(**kwargs)
+        author = models.Authors.objects.get(slug=self.kwargs.get("slug"))
+        context["author_info"] = get_wikipedia_page(author.name)
+        return context
 
 
 class TranslatorView(DetailView):

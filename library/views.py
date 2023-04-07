@@ -20,11 +20,14 @@ class BookDetailView(DetailView):
 class AuthorView(DetailView):
     template_name = "library/author.html"
     model = models.Authors
+    context_object_name = "author"
 
     def get_context_data(self, **kwargs):
         context = super(AuthorView, self).get_context_data(**kwargs)
-        author = models.Authors.objects.get(slug=self.kwargs.get("slug"))
+        author_slug = self.kwargs.get("slug")
+        author = models.Authors.objects.get(slug=author_slug)
         context["author_info"] = get_wikipedia_page(author.name)
+        context["books"] = models.Books.objects.filter(author__slug=author_slug)
         return context
 
 

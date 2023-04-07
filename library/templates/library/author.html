@@ -12,6 +12,9 @@
     <h1>{{author_info.title}}</h1>
     <p>{{author_info.summery}}</p>
     <img src="{{author_info.picture}}" alt="">
+    {% for book in books %}
+    <p>{{book}}</p>
+    {% endfor %}
 </body>
 
 </html>

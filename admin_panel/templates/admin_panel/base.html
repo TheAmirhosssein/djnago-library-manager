@@ -84,9 +84,16 @@ desired effect
                 <span class="label label-info">نمایش سایت</span>
               </a>
             </li>
+
             <li class="user user-menu">
               <a class="dropdown-toggle" data-toggle="dropdown">
                 <span class="hidden-xs">{{request.user}}</span>
+              </a>
+            </li>
+            <li class="dropdown messages-menu">
+              <a href="{% url 'logout' %}">
+                <i class="fa fa-arrow-circle-left"></i>
+                <span class="label label-danger">خروج</span>
               </a>
             </li>
             <!-- Control Sidebar Toggle Button -->
@@ -106,6 +113,7 @@ desired effect
             <img src="{% static 'admin_panel/dist/img/user2-160x160.jpg' %}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-right info">
+            <p>{{request.user}}</p>
             <p>{{request.user}}</p>
             <!-- Status -->
             <a><i class="fa fa-circle text-success"></i> آنلاین</a>

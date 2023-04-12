@@ -1,4 +1,9 @@
 from django.contrib.auth.models import User
+from django.contrib.auth.views import (
+    LoginView,
+    PasswordChangeDoneView,
+    PasswordChangeView,
+)
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -13,18 +18,9 @@ class RegisterView(CreateView):
     template_name = "account/register.html"
 
 
+class LoginView(LoginView):
+    redirect_authenticated_user = True
+    template_name = "account/login.html"
 
-# class CreateUser(SetNotAccessMixin, ReturnIfAuthenticateMixin, CreateView):
-#     form_class = UserForm
-#     model = User
-
-#     def form_valid(self, form):
-#         user = form.save(commit=False)
-#         user.is_active = False
-#         user.save()
-#         return render(self.request, "email-confirmation/email_send_login.html")
-
-#     # if is success rever user to login page
-#     success_url = reverse_lazy("login")
-#     # our template name
-#     template_name = "registration/signup.html"
+    def get_success_url(self):
+        return reverse_lazy("home")

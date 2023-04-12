@@ -1,83 +1,57 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"
-        integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v[X.Y.Z]/dist/font-face.css" rel="stylesheet"
-        type="text/css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-</head>
-
-<body>
-
-    <main>
-        <form action="{% url 'register' %}" method="post">
-            <div class="logo mt-4 to-hide">
-                <a href="index.html"><img class="img-fluid login-logo" src="./images/book-logo.png" alt=""></a>
-                <a class="mt-2 logo-text" href="index.html">مدیریت کتابخانه</a>
-            </div>
-            {% csrf_token %}
-            <div class="inputs mt-2 to-hide">
-                <div class="two-side">
-                    <div class="input-box">
-                        {{form.first_name}}
-                        {{form.first_name.errors}}
-                        <span>نام</span>
-                    </div>
-                    <div class="input-box">
-                        {{form.last_name}}
-                        {{form.last_name.errors}}
-                        <span>نام خانوادگی</span>
-                    </div>
+{% block title %}ایجاد حساب کاربری{% endblock title %}
+{% block content %}
+<main>
+    <form action="{% url 'register' %}" method="post">
+        <div class="logo mt-4 to-hide">
+            <a href="index.html"><img class="img-fluid login-logo" src="{% static 'images/book-logo.png' %}" alt=""></a>
+            <a class="mt-2 logo-text" href="index.html">مدیریت کتابخانه</a>
+        </div>
+        {% csrf_token %}
+        <div class="inputs mt-2 to-hide">
+            <div class="two-side">
+                <div class="input-box">
+                    {{form.first_name}}
+                    {{form.first_name.errors}}
+                    <span>نام</span>
                 </div>
                 <div class="input-box">
-                    {{form.username}}
-                    {{form.username.errors}}
-                    <span>نام کاربری</span>
-                </div>
-                <div class="input-box">
-                    {{form.email}}
-                    {{form.email.errors}}
-                    <span>ایمیل</span>
-                </div>
-                <div class="two-side">
-                    <div class="input-box">
-                        {{form.password1}}
-                        {{form.password1.errors}}
-                        <span>رمز عبور</span>
-                    </div>
-                    <div class="input-box">
-                        {{form.password2}}
-                        {{form.password2.errors}}
-                        <span>تکرار رمز عبور</span>
-                    </div>
-                </div>
-                <div class="input-box">
-                    <input type="submit" value="ساخت حساب کاربری">
-                </div>
-                <div class="box mt-4 text-center">
-                    <p class="text-white">حساب کاربری دارید؟ <a href="./login.html">ورود به حساب کاربری</a></p>
+                    {{form.last_name}}
+                    {{form.last_name.errors}}
+                    <span>نام خانوادگی</span>
                 </div>
             </div>
-        </form>
-    </main>
+            <div class="input-box">
+                {{form.username}}
+                {{form.username.errors}}
+                <span>نام کاربری</span>
+            </div>
+            <div class="input-box">
+                {{form.email}}
+                {{form.email.errors}}
+                <span>ایمیل</span>
+            </div>
+            <div class="two-side">
+                <div class="input-box">
+                    {{form.password1}}
+                    {{form.password1.errors}}
+                    <span>رمز عبور</span>
+                </div>
+                <div class="input-box">
+                    {{form.password2}}
+                    {{form.password2.errors}}
+                    <span>تکرار رمز عبور</span>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="submit" value="ساخت حساب کاربری">
+            </div>
+            <div class="box mt-4 text-center">
+                <p class="text-white">حساب کاربری دارید؟ <a href="./login.html">ورود به حساب کاربری</a></p>
+            </div>
+        </div>
+    </form>
+</main>
 
-    <script src="{% static 'javascript/script.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
-</html>
+{% endblock content %}

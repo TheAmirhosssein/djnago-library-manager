@@ -1,12 +1,13 @@
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.contrib.auth.views import (
     LoginView,
     PasswordChangeDoneView,
     PasswordChangeView,
 )
-from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.shortcuts import redirect
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, View
 
 from account.forms import RegisterForm
 
@@ -24,3 +25,9 @@ class LoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy("home")
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect(reverse("login"))

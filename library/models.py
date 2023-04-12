@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.text import slugify
 
@@ -72,6 +73,10 @@ class Books(models.Model):
     genres = models.ManyToManyField(Genres, verbose_name="ژانر")
     publisher = models.ForeignKey(
         Publishers, verbose_name="ناشر", on_delete=models.CASCADE
+    )
+    publish_date = models.IntegerField(
+        verbose_name="تاریخ نشر",
+        validators=[MaxValueValidator(3000), MinValueValidator(1000)],
     )
     book_image = models.ImageField(upload_to="images/books", verbose_name="کاور کتاب")
     detail = models.TextField(verbose_name="توضیحات")

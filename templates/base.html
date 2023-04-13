@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
@@ -22,14 +22,14 @@
                 <span class="menu"><i class='bx bx-menu'></i></span>
                 <div class="logo logo-container-deactive mt-4">
                     <a class="logo-deactive logo-image" href="./index.html"><img class="img-fluid book-image ml-5"
-                            src="./images/book-logo.png" alt=""></a>
+                            src="{% static 'images/book-logo.png' %}" alt=""></a>
                     <a href="./index.html" class="text-dark text-decoration-none mt-3 show logo-text"><span
                             class="text mt-3">مدیریت کتاب ها</span></a>
                 </div>
                 <div class="line"></div>
                 <ul class="nav mt-3">
                     <li class="nav-item active">
-                        <a class="tag-a" href="./index.html"><span class="icon"><i class='bx bx-home'></i></span> <span
+                        <a class="tag-a" href="{% url 'home' %}"><span class="icon"><i class='bx bx-home'></i></span> <span
                                 class="show text-for-menu">خانه</span></a>
                     </li>
 
@@ -57,150 +57,21 @@
 
                 <div class="profile-section">
                     <a href="#">
-                        <div class="box-one profile-nomargin">
-                            <img src="./images/avatar.jpg" alt="metidotpy" class="profile-image">
-                        </div>
+                        
                         <div class="box-two show">
                             <a href="#">
-                                <span class="username">مهدی رادفر</span>
+                                <span class="username">{{request.user}}</span>
                             </a>
                         </div>
                     </a>
 
                     <div class="box-three show">
-                        <a href="#"><span class="logout"><i class='bx bx-log-out-circle'></i></span></a>
+                        <a href="{% url 'logout' %}"><span class="logout"><i class='bx bx-log-out-circle'></i></span></a>
                     </div>
                 </div>
             </header>
         </div>
-        <section class="card-section">
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./images/card-img.jpg" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-black">داشتن و نداشتن</h5>
-                    <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را
-                        روایت می‌کند</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                            class="writer">ارنست همینگوی</span></li>
-                    <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                            class="writer">1987</span></li>
-                </ul>
-
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary card-link">ادامه</a>
-                </div>
-            </div>
-        </section>
+        {% block content %}{% endblock content %}
     </div>
     <script src="{% static 'javascript/script.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

@@ -29,6 +29,7 @@ body{
     /* font-family: Vazir, sans-serif; */
 
     background-color: var(--main-clr) !important;
+    overflow-x: hidden;
     
 }
 
@@ -42,14 +43,11 @@ body{
     background: var(--secondary-clr);
     position: relative;
     width: 13rem;
-    /* position: fixed; */
+    position: fixed;
 }
 .nav{
     position: static !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* width: 13rem !important; */
+    /* width: 17rem !important; */
 }
 
 .book-image{
@@ -459,16 +457,47 @@ a.close span.icon{
 .card-section{
     width: 70% !important;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     grid-gap: 1.5rem;
     align-items: center;
+    margin-top: 2rem;
+    margin-left: 3rem;
 }
 .card{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15rem;
+    width: 20rem;
+    border: none !important;
+    background: var(--secondary-clr) !important;
 }
+
+ul.list-group-flush{
+    width: 100%;
+    background: var(--secondary-clr) !important;
+}
+ul.list-group-flush li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-clr) !important;
+    font-size: 1.1rem;
+}
+ul.list-group-flush li span.icon{
+    font-size: 18px;
+}
+
+.card-footer{
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.card-footer a{
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
 /* End Card Section */
 
 
@@ -615,3 +644,21 @@ form .line{
 }
 
 /* End login and signup form */
+
+div.home{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .card-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 !important;
+        margin-top: 1rem !important;
+        gap: 1.5rem;
+    }
+}

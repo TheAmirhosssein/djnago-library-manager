@@ -12,13 +12,6 @@ const a = document.querySelectorAll("li a.tag-a");
 const form = document.querySelector("form");
 const formLogo = document.querySelector("form .logo");
 const inputs = document.querySelector(".inputs")
-{
-    form.classList.add("open");
-    setTimeout(() => {
-        formLogo.classList.add("to-show");
-        inputs.classList.add("to-show");
-    }, 2000)
-}
 
 let device;
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) device = 'm';
@@ -81,3 +74,11 @@ menuButton.addEventListener("click", () => {
         item.classList.toggle("close");
     })
 });
+
+{
+    form.classList.add("open");
+    setTimeout(() => {
+        formLogo.classList.add("to-show");
+        inputs.classList.add("to-show");
+    }, 2000)
+}

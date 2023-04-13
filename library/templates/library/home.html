@@ -2,131 +2,28 @@
 {% block title %}مدیریت کتابخانه | صفحه اصلی{% endblock  %}
 {% block content %}
 <section class="card-section">
+    {% for book in books %}
     <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
+        <img src="{{book.book_image.url}}" class="card-img-top">
         <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
+            <h5 class="card-title text-black">{{book.title}}</h5>
+            <p class="card-text">{{book.detail}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
+            <li class="list-group-item"><span class="icon">
+                    <i class='bx bx-edit-alt'></i>
+                </span> نویسنده: <a href="{% url 'author' book.author.slug%}">
+                    <span class="writer">{{book.author}}</span>
+            </li></a>
             <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
+                    class="writer">{{book.publish_date}}</span></li>
         </ul>
 
         <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
+            <a href="{% url 'book_details' book.slug %}" class="btn btn-primary card-link">ادامه</a>
         </div>
     </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
+    {% endfor %}
 
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
-
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
-
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
-
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
-
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="./images/card-img.jpg" class="card-img-top">
-        <div class="card-body text-center">
-            <h5 class="card-title text-black">داشتن و نداشتن</h5>
-            <p class="card-text">داشتن و نداشتن، داستان یک ناخدای قایق ماهیگیری به نام هری مورگان در فلوریدا را روایت
-                می‌کند</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><span class="icon"><i class='bx bx-edit-alt'></i></span> نویسنده: <span
-                    class="writer">ارنست همینگوی</span></li>
-            <li class="list-group-item"><span class="icon"><i class='bx bx-pencil'></i></span> سال انتشار: <span
-                    class="writer">1987</span></li>
-        </ul>
-
-        <div class="card-footer">
-            <a href="#" class="btn btn-primary card-link">ادامه</a>
-        </div>
-    </div>
 </section>
 {% endblock content %}

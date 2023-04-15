@@ -1,20 +1,20 @@
 @import url("../fonts/fonts.css");
 
 
-:root{
+:root {
     --main-clr: #000022;
     --secondary-clr: #F8E7D7;
     --main-clr-low-opacity: #000022cc;
     --secondary-clr-low-opacity: #f8e7d7ef;
     --input-color: #1d2b3a;
-    
+
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,20 +23,25 @@ a{
 
 }
 
-body{
+body {
     padding: 0;
     font-family: Sahel, sans-serif;
     /* font-family: Vazir, sans-serif; */
 
     background-color: var(--main-clr) !important;
     overflow-x: hidden;
-    
+
 }
 
-.nomargin {margin: 0 !important; padding: 0 !important;}
 
 
-.navigation{
+.nomargin {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.navigation {
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -45,62 +50,66 @@ body{
     width: 13rem;
     position: fixed;
 }
-.nav{
+
+.nav {
     position: static !important;
     /* width: 17rem !important; */
 }
 
-.book-image{
+.book-image {
     width: 5rem;
     height: 5rem;
 
 }
 
-div.logo{
+div.logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
-.text{
+
+.text {
     font-size: 16px;
     font-weight: bold;
 }
 
-div.profile{
+div.profile {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.profile-image{
+
+.profile-image {
     width: 2rem;
     height: 2rem;
 }
 
-.line{
+.line {
     margin: 15px 0;
     width: 100%;
     height: 1.5px;
     background: var(--main-clr);
 }
 
-.profile-name{
+.profile-name {
     font-size: 14px;
     font-weight: bold;
 }
 
-span{
+span {
     color: var(--main-clr) !important;
 }
 
 
-ul.nav{
+ul.nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-ul.nav .nav-item{
+
+ul.nav .nav-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +117,7 @@ ul.nav .nav-item{
     width: 100% !important;
 }
 
-ul.nav .nav-item a{
+ul.nav .nav-item a {
     display: flex;
     justify-content: flex-start;
     padding: 0.7rem 1.3rem;
@@ -122,35 +131,35 @@ ul.nav .nav-item a{
     transition: background-color 0.6s;
 }
 
-ul.nav .nav-item a:hover{
+ul.nav .nav-item a:hover {
     background-color: var(--main-clr);
     color: var(--secondary-clr) !important;
 }
 
-ul.nav .nav-item a:hover span.text-for-menu{
+ul.nav .nav-item a:hover span.text-for-menu {
     color: var(--secondary-clr) !important;
 
 }
 
-ul.nav .nav-item a:hover span.icon{
+ul.nav .nav-item a:hover span.icon {
     color: var(--secondary-clr) !important;
 }
 
-ul.nav li.active a{
+ul.nav li.active a {
     background-color: var(--main-clr-low-opacity);
     color: var(--secondary-clr) !important;
 }
 
-ul.nav li.active a.close span.icon{
+ul.nav li.active a.close span.icon {
     margin: 0;
 }
 
-ul.nav li.active a span.text-for-menu{
+ul.nav li.active a span.text-for-menu {
     color: var(--secondary-clr) !important;
 }
 
 
-ul.nav li a span.text-for-menu{
+ul.nav li a span.text-for-menu {
     /* animation-name: menu-height; */
     /* animation-duration: 2.0s;
     animation-direction: alternate;
@@ -159,17 +168,17 @@ ul.nav li a span.text-for-menu{
     overflow: hidden;
 }
 
-ul.nav li a span.icon{
+ul.nav li a span.icon {
     font-size: 20px;
     margin-left: 0.7rem;
     transform: translateY(2px);
 }
 
-ul.nav li.active a span.icon{
+ul.nav li.active a span.icon {
     color: var(--secondary-clr) !important;
 }
 
-.profile-section{
+.profile-section {
     background-color: var(--main-clr-low-opacity);
     position: absolute;
     width: 100%;
@@ -181,14 +190,14 @@ ul.nav li.active a span.icon{
     padding: 0.8rem 1.3rem;
 }
 
-.profile-section span.username{
+.profile-section span.username {
     margin-left: 0.7rem;
     font-size: 0.9rem;
     color: var(--secondary-clr) !important;
     font-weight: bold;
 }
 
-.profile-image{
+.profile-image {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -197,7 +206,7 @@ ul.nav li.active a span.icon{
     outline-offset: 5px;
 }
 
-span.logout{
+span.logout {
     margin-right: 1rem;
     font-size: 1rem;
     width: 30px;
@@ -210,7 +219,7 @@ span.logout{
     border-radius: 8px;
 }
 
-span.menu{
+span.menu {
     position: absolute;
     left: -2.5rem;
     display: inline-block;
@@ -225,13 +234,13 @@ span.menu{
     /* margin: 50rem; */
 }
 
-span.text-for-menu.deactive{
+span.text-for-menu.deactive {
     display: none;
 }
 
 /* menu active section */
 
-.animation-menu{
+.animation-menu {
     animation-name: menu-animation;
     animation-duration: 2.0s;
     animation-direction: alternate;
@@ -239,36 +248,47 @@ span.text-for-menu.deactive{
     animation-fill-mode: forwards;
 }
 
+@media screen and (max-width: 640px) {
+    .card {
+        width: 15rem !important;
+    }
+
+    .navigation {
+        width: 8rem !important;
+    }
+}
+
 @keyframes menu-animation {
-    0%{
-        width: 13rem;
-    }
-    
-
-    50%{
-        width: 16rem;
+    0% {
+        width: 13rem !important;
     }
 
-    75%{
-        width: 10rem;
+
+    50% {
+        width: 16rem !important;
     }
 
-    100%{
-        width: 5rem;
+    75% {
+        width: 10rem !important;
+    }
+
+    100% {
+        width: 5rem !important;
     }
 }
 
 @keyframes menu-height {
-    0%{
+    0% {
         height: 100%;
     }
-    100%{
+
+    100% {
         height: 0;
         /* display: none; */
     }
 }
 
-.hide{
+.hide {
     animation-name: hide;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -278,33 +298,36 @@ span.text-for-menu.deactive{
 }
 
 @keyframes hide {
-    0%{
+    0% {
         height: 100% !important;
     }
 
-    50%{
+    50% {
         opacity: 0.5;
         height: 100% !important;
     }
 
-    100%{
+    100% {
         height: 0 !important;
         opacity: 0;
         display: none;
     }
 }
 
-.profile-nomargin{
+.profile-nomargin {
     margin: 0 !important;
 }
-.box-two{
+
+.box-two {
     margin-right: 1rem;
 }
-ul.nav li{
+
+ul.nav li {
     justify-content: center !important;
     align-items: center !important;
 }
-ul.nav li a.close{
+
+ul.nav li a.close {
     animation: close 1 alternate forwards 2.0s;
     width: 3.5rem !important;
     height: 3.5rem !important;
@@ -312,108 +335,113 @@ ul.nav li a.close{
 }
 
 @keyframes close {
-    to{
+    to {
         border-radius: 50%;
         justify-content: center;
         align-items: center;
     }
 }
 
-a.close span.icon{
+a.close span.icon {
     margin: 0 !important;
 }
 
-.nav-item.close{
+.nav-item.close {
     justify-content: center !important;
     align-items: center !important;
 }
 
 
 @keyframes close-animation {
-    from{
+    from {
         height: 0;
         width: 0 !important;
     }
-    to{
-        
 
-    }
+    to {}
 }
 
-.logo-container-active{
+.logo-container-active {
     animation: logo-container 2.0s 1 alternate forwards;
 }
-.logo-active{
+
+.logo-active {
     animation: logo-image 2.0s 1 alternate forwards;
 }
 
 @keyframes logo-container {
-    from{
+    from {
         height: 5rem;
     }
-    to{
+
+    to {
         height: 2rem;
     }
 }
 
 @keyframes logo-image {
-    from{
+    from {
         width: 100%;
     }
-    to{
+
+    to {
         width: 70%;
     }
 }
 
 
 /* show animation */
-.show{
+.show {
     animation: show 2s alternate 1 forwards;
 }
+
 @keyframes show {
-    0%{
+    0% {
         opacity: 0;
         height: 0 !important;
     }
 
-    50%{
+    50% {
         opacity: 0.5;
         height: 100% !important;
     }
 
-    100%{
+    100% {
         height: 100% !important;
         opacity: 1;
         display: none;
     }
 }
 
-.logo-deactive{
+.logo-deactive {
     animation: deactive-logo 2s 1 alternate forwards;
 }
+
 @keyframes deactive-logo {
-    from{
+    from {
         width: 70%;
     }
-    to{
+
+    to {
         width: 100%;
     }
 }
 
-.logo-container-deactive{
+.logo-container-deactive {
     animation: deactive-logo-container 2s 1 alternate forwards;
 }
 
 @keyframes deactive-logo-container {
-    from{
+    from {
         height: 2rem;
     }
-    to{
+
+    to {
         height: 5rem;
     }
 }
 
-.animation-menu-deactive{
+.animation-menu-deactive {
     animation-name: menu-animation-deactive;
     animation-duration: 2.0s;
     animation-direction: alternate;
@@ -422,39 +450,40 @@ a.close span.icon{
 }
 
 @keyframes menu-animation-deactive {
-    0%{
+    0% {
         width: 5rem;
     }
-    
 
-    50%{
+
+    50% {
         width: 16rem;
     }
 
-    75%{
+    75% {
         width: 15rem;
     }
 
-    100%{
+    100% {
         width: 13rem;
     }
 }
 
-.text-menu-deactive{
+.text-menu-deactive {
     animation: menu-height-deactive 2s 1 forwards alternate
 }
 
 @keyframes menu-height-deactive {
-    0%{
+    0% {
         height: 0;
     }
-    100%{
+
+    100% {
         height: 100%;
     }
 }
 
 /* Card Section */
-.card-section{
+.card-section {
     width: 70% !important;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -463,7 +492,8 @@ a.close span.icon{
     margin-top: 2rem;
     margin-left: 3rem;
 }
-.card{
+
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -472,28 +502,31 @@ a.close span.icon{
     background: var(--secondary-clr) !important;
 }
 
-ul.list-group-flush{
+ul.list-group-flush {
     width: 100%;
     background: var(--secondary-clr) !important;
 }
-ul.list-group-flush li{
+
+ul.list-group-flush li {
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--secondary-clr) !important;
     font-size: 1.1rem;
 }
-ul.list-group-flush li span.icon{
+
+ul.list-group-flush li span.icon {
     font-size: 18px;
 }
 
-.card-footer{
+.card-footer {
     width: 100%;
     height: 100%;
     padding: 0 !important;
     margin: 0 !important;
 }
-.card-footer a{
+
+.card-footer a {
     width: 100%;
     border-radius: 0 0 5px 5px;
 }
@@ -503,71 +536,80 @@ ul.list-group-flush li span.icon{
 
 
 /* Login and signup form */
-main{
+main {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-main form{
+
+main form {
     width: 30rem;
     height: 42rem;
     background: var(--input-color);
     border-radius: 10px;
 }
-form.open{
+
+form.open {
     animation: open-form 2s 1 forwards alternate;
 }
 
 @keyframes open-form {
-    0%{
+    0% {
         width: 0;
         height: 0;
     }
-    25%{
+
+    25% {
         width: 20rem;
         height: 20rem;
     }
-    50%{
+
+    50% {
         width: 40rem;
     }
-    75%{
+
+    75% {
         width: 35rem;
         height: 40rem;
     }
-    100%{
+
+    100% {
         width: 30rem;
         height: 45rem;
     }
 
 }
 
-form .logo{
+form .logo {
     padding: 2rem !important;
     margin: 0 !important;
     background: var(--secondary-clr);
     border-radius: 10px 10px 0 0;
 }
-form .line{
+
+form .line {
     margin-top: 0 !important;
 }
-.login-logo{
+
+.login-logo {
     width: 14rem;
     height: 9rem;
     object-fit: cover;
 }
-.logo-text{
+
+.logo-text {
     color: var(--main-clr);
 }
 
-.input-box{
+.input-box {
     position: relative;
     width: 300px;
     margin-top: 1rem;
 }
 
-.input-box input{
+.input-box input {
     direction: ltr !important;
     width: 100%;
     padding: 10px;
@@ -579,7 +621,7 @@ form .line{
     font-size: 1em;
 }
 
-.input-box span{
+.input-box span {
     position: absolute;
     right: 0;
     padding: 10px;
@@ -590,7 +632,7 @@ form .line{
     transition: 0.5s;
 }
 
-.inputs{
+.inputs {
     height: 15rem;
     display: flex;
     flex-direction: column !important;
@@ -598,8 +640,8 @@ form .line{
     align-items: center !important;
 }
 
-.input-box input:valid ~ span,
-.input-box input:focus ~ span{
+.input-box input:valid~span,
+.input-box input:focus~span {
     color: #00dfc4 !important;
     transform: translateX(-10px) translateY(-10px);
     font-size: 0.9rem;
@@ -610,49 +652,52 @@ form .line{
 }
 
 .input-box input:valid,
-.input-box input:focus{
+.input-box input:focus {
     border: 2px solid #00dfc4 !important;
 }
 
-.to-show{
+.to-show {
     animation: to-show 2s 1 forwards alternate;
 }
+
 @keyframes to-show {
-    to{
+    to {
         opacity: 1;
     }
 }
 
-.to-hide{
+.to-hide {
     opacity: 0;
 }
 
-.two-side{
+.two-side {
     direction: rtl;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.two-side .input-box{
+
+.two-side .input-box {
     width: 140px;
     margin-top: 2rem;
     margin-left: 10px;
     margin-right: 10px;
 }
-.inputs .box{
+
+.inputs .box {
     text-align: center;
 }
 
 /* End login and signup form */
 
-div.home{
-    height: 100vh;
+div.home {
+    /* height: 100vh; */
     display: flex;
     justify-content: space-between;
 }
 
 @media screen and (max-width: 1000px) {
-    .card-section{
+    .card-section {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -660,5 +705,6 @@ div.home{
         margin: 0 !important;
         margin-top: 1rem !important;
         gap: 1.5rem;
+        /* overflow: scroll; */
     }
 }

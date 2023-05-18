@@ -10,6 +10,11 @@ class HomeView(ListView):
     model = models.Books
     context_object_name = "books"
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data()
+        context["authors"] = models.Authors.objects.all()
+        return context
+
 
 class BookDetailView(DetailView):
     template_name = "library/book_details.html"

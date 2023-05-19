@@ -1,0 +1,355 @@
+@media(max-width: 1700px) {
+    .booking-element{
+        display: none;
+    }
+    .booking-form{
+        margin-left: 20px;
+    }
+    .banner-element{
+        display: none;
+    }
+    .about-section::after{
+        width: 32%;
+    }
+    .about-element-one {
+        top: 28%;
+        width: 25%;
+    }
+    .about-element-two{
+        width: 50%;
+    }
+    .overview-content{
+        width: 100%;
+    }
+    .overview-content{
+        margin-bottom: -6px;
+    }
+    .skill-content-area{
+        width: 100%;
+    }
+}
+@media(max-width: 1199px) {
+    .choose-content{
+        max-width: 100%;
+    }
+    .team-section--style .team-thumb {
+        width: 100%;
+    }
+    .team-section--style .team-content {
+        width: 100%;
+    }
+    .overview-content{
+        width: 100%;
+        margin-left: 0;
+    }
+    .client-item{
+        padding-top: 150px;
+        padding-bottom: 120px;
+    }
+    .client-thumb{
+        display: none;
+    }
+    .airline-course-section{
+        display: none;
+    }
+    .banner-content p{
+        width: 100%;
+    }
+    .blog-thumb{
+        width: 100%;
+    }
+    .blog-content{
+        width: 100%;
+        margin-top: 0;
+    }
+    .common-form-style {
+        padding: 73px 60px;
+    }
+}
+@media (max-width: 991px) {
+    h2{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    p,span,li{
+        font-size: 14px;
+    }
+    input,textarea{
+        font-size: 14px;
+    }
+    .banner-section{
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    .banner-content .title {
+        font-size: 35px;
+    }
+    .banner-content .title span {
+        font-size: 32px;
+    }
+    .banner-content p {
+        font-size: 18px;
+    }
+    .banner-content .cmn-btn {
+        margin: 20px 15px 0 0;
+    }
+    .four-not-four-section-wrapper .title {
+        font-size: 80px;
+    }
+    .sidebar{
+        margin-top: 60px;
+    }
+    .privacy-sidebar{
+        margin-top: 60px;
+    }
+    .destination-details-section .sidebar{
+        margin-bottom: 60px;
+    }
+    .question-form-area{
+        padding-top: 90px;
+    }
+    .faq-thumb{
+        padding-top: 30px;
+    }
+    .inner-banner-content .title {
+        font-size: 40px;
+    }
+    .sidebar-offer-item .title {
+        font-size: 40px;
+    }
+    .sidebar-offer-item .title span {
+        font-size: 30px;
+    }
+    .add-content .title {
+        font-size: 32px;
+    }
+    .add-content span {
+        font-size: 35px;
+    }
+    .grid-item{
+        max-width: 50%;
+        flex: 50%;
+        width: 50%;
+    }
+    .offer-item{
+        width: 50%;
+    }
+    .portfolio-section .section-header{
+        margin-bottom: 30px;
+    }
+    .portfolio-section .cmn-btn.active{
+        margin-bottom: 60px;
+    }
+    .header-bottom{
+        background-color: #fff;
+    }
+    .header-bottom .site-logo{
+        display: block;
+        padding: 5px 0;
+    }
+    .navbar-expand-lg{
+        float: right;
+        width: 100%;
+    }
+    .header-action{
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .navbar-toggler{
+        display: block;
+    }
+    .skill-content-area{
+        width: 100%;
+    }
+    .about-section::after{
+        background-color: #fff;
+    }
+    .counter-area{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .about-element-one{
+        display: none;
+    }
+    .about-element-two{
+        display: none;
+    }
+    .about-section::after{
+        width: 0;
+    }
+    .counter-item .counter-number{
+        font-size: 32px;
+    }
+
+    .counter-item .counter-content{
+        font-size: 18px;
+    }
+    .overview-content--style{
+        width: 100%;
+    }
+    .contact-us-content .title {
+        font-size: 30px;
+    }
+    .privacy-content .title {
+        font-size: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .blog-content--style .meta-date {
+        width: 100%;
+    }
+    .grid-item{
+        width: 100%;
+    }
+
+    .offer-item{
+        width: 100%;
+    }
+
+    .team-section--style .team-content {
+        width: 100%;
+    }
+
+    .overview-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .grid-item{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .blog-thumb{
+        width: 100%;
+    }
+    .choose-us-section .choose-content{
+        padding-bottom: 0;
+    }
+    .pagination li a{
+        font-size: 16px;
+    }
+    .blog-details-content .title{
+        font-size: 18px;
+    }
+}
+@media (max-width: 575px) {
+    h2{
+        font-size: 24px;
+    }
+    h3,h3>a{
+        font-size: 18px;
+    }
+    h5,h5>a{
+        font-size: 16px !important;
+    }
+    p,span,li{
+        font-size: 14px;
+    }
+    input,textarea{
+        font-size: 14px;
+    }
+    .testimonial-item p{
+        font-size: 18px;
+    }
+    .inner-banner-content .title {
+        font-size: 30px;
+    }
+    .inner-banner-section{
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .contact-banner-section{
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    .call-action-section .button-group {
+        float: left;
+        margin-top: 20px;
+    }
+    .sidebar-offer-item .title {
+        font-size: 20px;
+    }
+    .sidebar-offer-item .title span {
+        font-size: 18px;
+    }
+    blockquote .quote-content {
+        font-size: 18px;
+        padding: 0;
+    }
+    .comment-item .comment-content {
+        width: calc(100% - 0px);
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .common-form-style .title {
+        font-size: 22px;
+    }
+    .faq-section-header {
+        font-size: 24px;
+    }
+    .add-content .title {
+        font-size: 28px;
+    }
+    .add-content span {
+        font-size: 30px;
+    }
+    .destination-details-question .title {
+        font-size: 24px;
+    }
+    .widget-box .caption{
+        font-size: 18px;
+    }
+    .filter-btn-group button {
+        padding: 0 8px;
+    }
+    .details-area .details-header .job-post .job-post-header {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 20px 0 0 0;
+    }
+    .single-row {
+        padding: 30px 30px;
+    }
+    .single-row .left {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    .single-row .left span::before {
+        opacity: 1;
+    }
+    .single-row .right {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        border: none;
+        margin-top: 20px;
+    }
+    .details-area .details-header .job-post .job-post-icon {
+        -ms-flex: 0;
+        flex: 0;
+    }
+    .call-action-content .title{
+        font-size: 24px;
+    }
+}
+@media (max-width: 440px) {
+    .common-form-style {
+        padding: 20px;
+    }
+    .register-form-area{
+        padding: 20px;
+    }
+    .login-form-area{
+        padding: 20px;
+    }
+}
+@media (max-width: 320px) {
+}

@@ -1,87 +1,123 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="fa" dir="">
+
+<!-- index-2.html  30 Nov 2019 03:25:25 GMT -->
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css"
-        integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v[X.Y.Z]/dist/font-face.css" rel="stylesheet"
-        type="text/css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- fontawesome css link -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <!-- flaticon css -->
+    <link rel="stylesheet" href="{% static 'assets/font/flaticon.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- nice-select css -->
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <!-- bootstrap css link -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- swipper css link -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png" type="image/x-icon' %}">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- main style css link -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- responsive css link -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+
 </head>
 
 <body>
-    <div class="home">
-        <div class="nav">
-            <header class="navigation nomargin text-center p-0 m-0 animation-menu-deactive">
-                <span class="menu"><i class='bx bx-menu'></i></span>
-                <div class="logo logo-container-deactive mt-4">
-                    <a class="logo-deactive logo-image" href="./index.html"><img class="img-fluid book-image ml-5"
-                            src="{% static 'images/book-logo.png' %}" alt=""></a>
-                    <a href="./index.html" class="text-dark text-decoration-none mt-3 show logo-text"><span
-                            class="text mt-3">مدیریت کتاب ها</span></a>
-                </div>
-                <div class="line"></div>
-                <ul class="nav mt-3">
-                    <li class="nav-item active">
-                        <a class="tag-a" href="{% url 'home' %}"><span class="icon"><i class='bx bx-home'></i></span> <span
-                                class="show text-for-menu">خانه</span></a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="tag-a"><span class="icon"><i class='bx bx-book-alt'></i></span> <span
-                                class="show text-for-menu">کتاب ها</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="tag-a"><span class="icon"><i class='bx bx-user'></i></span> <span
-                                class="show text-for-menu">ادمین</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="tag-a"><span class="icon"><i class='bx bx-user'></i></span> <span
-                                class="show text-for-menu">تست</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="tag-a"><span class="icon"><i class='bx bx-user'></i></span> <span
-                                class="show text-for-menu">ایران</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="tag-a"><span class="icon"><i class='bx bx-user'></i></span> <span
-                                class="show text-for-menu">گنگ</span></a>
-                    </li>
-                </ul>
 
-                <div class="profile-section">
-                    <a href="#">
-                        
-                        <div class="box-two show">
-                            <a href="#">
-                                <span class="username">{{request.user}}</span>
-                            </a>
-                        </div>
-                    </a>
-
-                    <div class="box-three show">
-                        <a href="{% url 'logout' %}"><span class="logout"><i class='bx bx-log-out-circle'></i></span></a>
-                    </div>
-                </div>
-            </header>
+    <!-- preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-thumb">
+            <img src="{% static 'assets/images/book-logo-2.png' %}" alt="image">
         </div>
-        {% block content %}{% endblock content %}
     </div>
-    <script src="{% static 'javascript/script.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- header-section start -->
+    <header class="header-section">
+        <div class="header-bottom">
+            <div class="container">
+
+                <div class="row align-items-center justify-content-between">
+                    <a class="site-logo site-title" href="index.html">
+                        <img src="{% static 'assets/images/book-logo-2.png' %}" alt="site-logo" width="50">
+                    </a>
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fas fa-bars"></span>
+                    </button>
+                    <nav class="navbar navbar-expand-lg p-0">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav main-menu ml-auto">
+                                <li><a href="">خانه</a></li>
+                                <li class="menu_has_children"><a href="#0">کتاب ها</a> </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-section end -->
+
+    {% block content %}{% endblock content %}
+
+
+
+    <!-- footer-section start -->
+    
+    <div class="privacy-area wow fadeIn" data-wow-duration="0.5" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p><a href="templateshub.net">Templates Hub</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-section end -->
+
+
+
+
+
+    <!-- jquery -->
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- migarate-jquery -->
+    <script src="{% static 'assets/js/jquery-migrate-3.0.0.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- magnific-popup js -->
+    <script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+    <!-- isotope -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <!-- nice-select js-->
+    <script src="{% static 'assets/js/jquery.nice-select.js' %}"></script>
+    <!-- swipper js -->
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <!-- waypoints js link -->
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <!-- counterup js -->
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <!-- paroller js -->
+    <script src="{% static 'assets/js/jquery.paroller.min.js' %}"></script>
+    <!-- main -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
 </body>
+
+<!-- index-2.html  30 Nov 2019 03:28:16 GMT -->
 
 </html>

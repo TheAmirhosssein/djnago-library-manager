@@ -26,8 +26,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # packages
     "widget_tweaks",
     "library",
+    "sorl.thumbnail",
+    # local apps
     "admin_panel",
     "account",
 ]

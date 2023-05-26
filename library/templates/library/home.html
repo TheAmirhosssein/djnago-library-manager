@@ -14,9 +14,9 @@
                     {% endthumbnail %}
                 </div>
                 <div class="blog-content--style">
-                    <h3 class="title"><a href="{% url 'book_detail' %}">{{book.title}}</a></h3>
+                    <h3 class="title"><a href="{% url 'book_details' book.slug %}">{{book.title}}</a></h3>
                     <div class="meta-post d-flex flex-wrap justify-content-between">
-                        <span class="meta-user"><a href="{% url 'author' %}">{{book.author}}</a></span>
+                        <span class="meta-user"><a href="{% url 'author' book.author.slug %}">{{book.author}}</a></span>
                         <span class="meta-user">{{book.publish_date}}</span>
                     </div>
                 </div>
@@ -25,10 +25,24 @@
         </div>
         <div class="row justify-content-center mt-60">
             <ul class="pagination">
-                <li><a href="#">01</a></li>
-                <li><a href="#">02</a></li>
-                <li><a href="#">03</a></li>
-                <li><a href="#">04</a></li>
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number  }}"><span><i
+                                class="fa fa-angle-double-left"></i></span></a></li>
+                {% endif %}
+                {% for pageNumber in paginator.page_range %}
+                <li>
+                    <a class="{% if page_obj.number == pageNumber %} active {% endif %}" href="
+                        ?page={{ pageNumber }}">{{ pageNumber }}
+                    </a>
+                </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number  }}">
+                        <span><i class="fa fa-angle-double-right"></i></span>
+                    </a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

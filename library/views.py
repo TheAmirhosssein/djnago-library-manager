@@ -16,6 +16,11 @@ class HomeView(ListView):
         context["authors"] = models.Authors.objects.all()
         return context
 
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        return models.Books.objects.filter(title__contains=query)
+    
+
 
 class BookDetailView(DetailView):
     template_name = "library/book_details.html"

@@ -11,14 +11,12 @@ class HomeView(ListView):
     context_object_name = "books"
     paginate_by = 12
 
-    def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data()
-        context["authors"] = models.Authors.objects.all()
-        return context
-
     def get_queryset(self):
-        query = self.request.GET.get("q")
-        return models.Books.objects.filter(title__contains=query)
+        query = super(HomeView, self).get_queryset()
+        q = self.kwargs.get("q")
+        if q is not None:
+            query = query.filter(title__contains=query)
+        return query
     
 
 

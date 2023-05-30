@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
@@ -11,6 +12,11 @@ class HomeView(ListView):
     context_object_name = "books"
     paginate_by = 12
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data()
+        context["authors"] = models.Authors.objects.annotate(books_count=Count('books')).all()
+        return context
+    
     def get_queryset(self):
         query = super(HomeView, self).get_queryset()
         q = self.kwargs.get("q")

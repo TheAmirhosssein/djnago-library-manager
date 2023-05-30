@@ -26,46 +26,116 @@
 <section class="blog-section pt-120 pb-120">
     <div class="container">
         <div class="row justify-content-center mb-30-none">
-            {% for book in books %}
-            <div class="col-lg-4 col-md-6 col-sm-8 mb-30">
-                <div class="blog-thumb--style">
-                    {% thumbnail book.book_image '350x380' crop='center' as im %}
-                    <img src="{{im.url}}" alt="image">
-                    {% endthumbnail %}
+            <div class="col-lg-8">
+                <div class="row mb-30-none">
+                    {% for book in books %}
+                    <div class="col-lg-4 col-md-6 col-sm-8 mb-30">
+                        <div class="blog-thumb--style">
+                            {% thumbnail book.book_image '350x380' crop='center' as im %}
+                            <img src="{{im.url}}" alt="image">
+                            {% endthumbnail %}
+                        </div>
+                        <div class="blog-content--style">
+                            <h3 class="title"><a href="{% url 'book_details' book.slug %}">{{book.title}}</a></h3>
+                            <div class="meta-post d-flex flex-wrap justify-content-between">
+                                <span class="meta-user"><a
+                                        href="{% url 'author' book.author.slug %}">{{book.author}}</a></span>
+                                <span class="meta-user">{{book.publish_date}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
                 </div>
-                <div class="blog-content--style">
-                    <h3 class="title"><a href="{% url 'book_details' book.slug %}">{{book.title}}</a></h3>
-                    <div class="meta-post d-flex flex-wrap justify-content-between">
-                        <span class="meta-user"><a href="{% url 'author' book.author.slug %}">{{book.author}}</a></span>
-                        <span class="meta-user">{{book.publish_date}}</span>
+                <div class="row justify-content-center mt-60">
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number  }}"><span><i
+                                        class="fa fa-angle-double-left"></i></span></a></li>
+                        {% endif %}
+                        {% for pageNumber in paginator.page_range %}
+                        <li>
+                            <a class="{% if page_obj.number == pageNumber %} active {% endif %}" href="
+                        ?page={{ pageNumber }}">{{ pageNumber }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                        <li>
+                            <a href="?page={{ page_obj.next_page_number  }}">
+                                <span><i class="fa fa-angle-double-right"></i></span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4" dir="rtl">
+                <div class="sidebar">
+                    <div class="widget-box mb-30">
+                        <span class="caption">نویسنده ها</span>
+                        <ul class="category-content">
+                            {% for author in authors %}
+                            <li><a href="#">{{author}}</a><span class="count">{{author.books_count}}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="widget-box mb-30">
+                        <span class="caption">popular post</span>
+                        <div class="popular-item-area">
+                            <div class="single-popular-item d-flex flex-wrap">
+                                <div class="popular-item-thumb">
+                                    <img src="assets/images/popular-1.png" alt="blog-image">
+                                </div>
+                                <div class="popular-item-content">
+                                    <a href="blog-details.html">
+                                        <h5>accumsan condimtum. ecenas </h5>
+                                    </a>
+                                    <span class="blog-user">post by admin</span><span class="blog-date">09 dec
+                                        2019</span>
+                                </div>
+                            </div>
+                            <div class="single-popular-item d-flex flex-wrap">
+                                <div class="popular-item-thumb">
+                                    <img src="assets/images/popular-2.png" alt="blog-image">
+                                </div>
+                                <div class="popular-item-content">
+                                    <a href="blog-details.html">
+                                        <h5>accumsan condimtum. ecenas </h5>
+                                    </a>
+                                    <span class="blog-user">post by admin</span><span class="blog-date">15 June
+                                        2019</span>
+                                </div>
+                            </div>
+                            <div class="single-popular-item d-flex flex-wrap">
+                                <div class="popular-item-thumb">
+                                    <img src="assets/images/popular-3.png" alt="blog-image">
+                                </div>
+                                <div class="popular-item-content">
+                                    <a href="blog-details.html">
+                                        <h5>accumsan condimtum. ecenas </h5>
+                                    </a>
+                                    <span class="blog-user">post by admin</span><span class="blog-date">28 June
+                                        2019</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-box mb-30">
+                        <span class="caption">news tag</span>
+                        <div class="tag-item-wrapper">
+                            <a href="#" class="tag-item active">air crew</a>
+                            <a href="#" class="tag-item">privat pilot</a>
+                            <a href="#" class="tag-item">Courses</a>
+                            <a href="#" class="tag-item">live support</a>
+                            <a href="#" class="tag-item">air carft research</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        <div class="row justify-content-center mt-60">
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number  }}"><span><i
-                                class="fa fa-angle-double-left"></i></span></a></li>
-                {% endif %}
-                {% for pageNumber in paginator.page_range %}
-                <li>
-                    <a class="{% if page_obj.number == pageNumber %} active {% endif %}" href="
-                        ?page={{ pageNumber }}">{{ pageNumber }}
-                    </a>
-                </li>
-                {% endfor %}
-                {% if page_obj.has_next %}
-                <li>
-                    <a href="?page={{ page_obj.next_page_number  }}">
-                        <span><i class="fa fa-angle-double-right"></i></span>
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
         </div>
     </div>
 </section>
+
 <!-- blog-section end -->
 {% endblock content %}

@@ -29,7 +29,7 @@
             <div class="col-lg-8">
                 <div class="row mb-30-none">
                     {% for book in books %}
-                    <div class="col-lg-6 col-md-6 col-sm-8 mb-30">
+                    <div class="col-lg-4 col-md-6 col-sm-8 mb-30">
                         <div class="blog-thumb--style">
                             {% thumbnail book.book_image '350x380' crop='center' as im %}
                             <img src="{{im.url}}" alt="image">

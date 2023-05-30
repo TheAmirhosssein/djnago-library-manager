@@ -10,7 +10,7 @@ class HomeView(ListView):
     template_name = "library/home.html"
     model = models.Books
     context_object_name = "books"
-    paginate_by = 12
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data()
@@ -19,9 +19,12 @@ class HomeView(ListView):
     
     def get_queryset(self):
         query = super(HomeView, self).get_queryset()
-        q = self.kwargs.get("q")
+        q = self.request.GET.get("q")
+        author = self.kwargs.get("author")
         if q is not None:
-            query = query.filter(title__contains=query)
+            query = query.filter(title__contains=q)
+        if author is not None:
+            query = query.filter(author__slug=author)
         return query
     
 

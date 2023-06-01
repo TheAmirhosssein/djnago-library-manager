@@ -5,7 +5,7 @@ from library.views import (AuthorView, BookDetailView, GenresView, HomeView,
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
-    path("book/<author>/", HomeView.as_view(), name="author_filter"),
+    path("books_filter/<author>/", HomeView.as_view(), name="author_filter"),
     path("book/<slug>/", BookDetailView.as_view(), name="book_details"),
     path("author/<slug>/", AuthorView.as_view(), name="author"),
     path("translator/<slug>/", TranslatorView.as_view(), name="translator"),

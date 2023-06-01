@@ -1175,7 +1175,7 @@ span {
 
 .inner-banner-section {
     position: relative;
-    background-image: url("../images/about.png");
+    background-image: url("/static/assets/images/book_banner.jpg");
     z-index: 2;
     background-size: cover;
     background-position: center;

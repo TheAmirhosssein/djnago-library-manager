@@ -30,44 +30,16 @@
                         <h3 class="title">{{book.title}}</h3>
                         <div class="meta-post d-flex flex-wrap">
                             <div class="meta-user">
-                                <a href="#"><span></span></a>
+                                <a href="{% url 'author' book.author.slug %}"><span>{{book.author}}</span></a>
                             </div>
                             <div class="meta-details">
-                                <a href="#"><span>air crew</span></a>
+                                <span>{{book.publish_date}}</span>
                             </div>
                         </div>
-                        <p>Quis aenean, a cursus ut ultrices felis mauris metus, nascetur erat, vulputate sed luctus
-                            vevamus harum vitae. Auctor etiam magna. Leo orci lorem posuere. Pede ligula vitae
-                            placerat vestibulum sollicitudin facilisis, nec euismod faucibus viverra ctus pulvinar
-                            lacus et mi in interdum, volutpat vitae lorem viverra, in et ad ipsum habitasse orci
-                            quisque. Odio augue ut felis netus ratione. Dignissim cursus, velit metus, porta ad nec
-                            magna volutpat molestie ligula, lorem et cubilia cras sapien nunc. Quam vestibulum
-                            integer, curabitur in in. Magna dignissim diam nibh, sed sed urna</p>
-                        <p>cras lectus amet tellus, aliquam porttitor lacinia velit blandit, orci odio justo, vel
-                            enim sed sed. Donec erat in libero. Nunc fusce laoreet lectus nam nam, et aut neque
-                            fusce, non libero sed luctus aptent. Fusce vitae integer vestibulum nisl mauris sit,
-                            integer donec, posuere vel, lobortis dictum. Eros aenean a. Tempor at feugiat arcu,
-                            pretium pharetra et sociis. Curabitur urna odio cum, ultricies rutrum ped</p>
+
                         <div class="blog-details-content">
-                            <h3 class="title">Cras Tauris Velit Nesciunt Sapien lndisse</h3>
-                            <p>aliquam eleifend ante, accumsan condimentum. Maecenas constetuer in in nec id,
-                                vestibulum in nibh nec, quam condimentum odio vitae, turpis mus porttitor, convallis
-                                est nulla. Tellus justlacus cras id ac fringilla, nunc justo mauris eget sagittis,
-                                pellentesque quis ornare mauris pellentesque accumsan vel. Wisi non sodales
-                                vulputate laoreet massa mollis, in in sed fringilla, justo vestibulum mi, eget eu
-                                vero urna justo. Leo justo parturient lorem, eleifend metus nulla</p>
-                        </div>
-                        <div class="row mb-30-none">
-                            <div class="col-lg-6 col-md-6 mb-30">
-                                <div class="blog-details-thumb">
-                                    <img src="assets/images/blog-details-1.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 mb-30">
-                                <div class="blog-details-thumb">
-                                    <img src="assets/images/blog-details-2.png" alt="image">
-                                </div>
-                            </div>
+                            <h3 class="title">توضیخات</h3>
+                            <p>{{book.title}}</p>
                         </div>
                     </div>
                 </div>

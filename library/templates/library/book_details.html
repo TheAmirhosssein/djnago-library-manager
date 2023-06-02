@@ -22,14 +22,15 @@
             <div class="col-lg-8">
                 <div class="blog-item mb-60">
                     <div class="blog-thumb--style2">
-                        <img src="{{book.book_image.url}}" alt="blog image">
-                        <a href="#0" class="overlay-date">{{book.publish_date}}</a>
+                        {% thumbnail book.book_image '350x380' crop='center' as im %}
+                        <img src="{{im.url}}" alt="image">
+                        {% endthumbnail %}
                     </div>
                     <div class="blog-content--style2 blog-content--style3">
-                        <h3 class="title">Pellentesque Elementum Velegestas Osuere Diam Sollicitudin</h3>
+                        <h3 class="title">{{book.title}}</h3>
                         <div class="meta-post d-flex flex-wrap">
                             <div class="meta-user">
-                                <a href="#"><span>by admin</span></a>
+                                <a href="#"><span></span></a>
                             </div>
                             <div class="meta-details">
                                 <a href="#"><span>air crew</span></a>

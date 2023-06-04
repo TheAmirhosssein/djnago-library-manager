@@ -43,69 +43,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="comments-section">
-                    <h3 class="title">02 comments</h3>
-                    <ul class="comment-wrapper">
-                        <li>
-                            <div class="comment-item">
-                                <div class="comment-thumb">
-                                    <a href="#"><img src="assets/images/comment-1.png" alt="blog"></a>
-                                </div>
-                                <div class="comment-content">
-                                    <h6 class="sub-title"><a href="#">raja miya </a></h6>
-                                    <span>10 hours ago</span>
-                                    <p>Lorem ipsum dolor sit amet, lobortis nulla lorem, sed ac facilisis aenean.
-                                        Puru lectus diam fermentum, orci massa, vulputate non amet lectus non
-                                        ullamco</p>
-                                    <a href="#" class="reply-button">Reply</a>
-                                </div>
-                            </div>
-                            <div class="comment-item">
-                                <div class="comment-thumb">
-                                    <a href="#"><img src="assets/images/comment-2.png" alt="blog"></a>
-                                </div>
-                                <div class="comment-content">
-                                    <h6 class="sub-title"><a href="#">hinif khan</a></h6>
-                                    <span>15 jun 2019 at 10.00 am</span>
-                                    <p>TLorem ipsum dolor sit amet, lobortis nulla lorem, sed ac facilisis aenean.
-                                        Puru lectus diam fermentum, orci massa, vulputate non amet lectus non
-                                        ullamco</p>
-                                    <a href="#" class="reply-button">Reply</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="leave-comment">
-                    <h3 class="title">Leave A Comment</h3>
-                    <form class="comment-form">
-                        <div class="row">
-                            <div class="col-sm-6 form-group mb-30">
-                                <input type="text" name="text" placeholder="Name*">
-                            </div>
-                            <div class="col-sm-6 form-group mb-30">
-                                <input type="text" name="email" placeholder="Email*">
-                            </div>
-                            <div class="col-sm-12 form-group mb-30">
-                                <textarea placeholder="Write Message" cols="30" rows="2"></textarea>
-                            </div>
-                            <div class="col-sm-12 form-group mb-30">
-                                <input type="submit" class="cmn-btn" value="Post Comment">
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
             <div class="col-lg-4" dir="rtl">
                 <div class="sidebar">
                     <div class="widget-box mb-30">
-                        <span class="caption">نویسنده ها</span>
-                        {% comment %} <ul class="category-content">
-                            {% for author in authors %}
-                            <li><a href="{% url 'author_filter' author.slug %}">{{author}}</a><span
-                                    class="count">{{author.books_count}}</span></li>
+                        <span class="caption">مشخصات</span>
+                        <ul class="category-content">
+                            <li>
+                                <span class="right">نویسنده:</span>
+                                <a href="{% url 'author' book.author.slug %}">{{book.author}}</a>
+                            </li>
+                            {% if book.translator %}
+                            <li>
+                                <span class="right">مترجم:</span>
+                                <a href="{% url 'translator' book.translator.slug %}">{{book.translator}}</a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <span class="right">ناشر:</span>
+                                <a href="">{{book.publisher}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget-box mb-30">
+                        <span class="caption">ژانر ها</span>
+                        <ul class="category-content">
+                            {% for genre in book.genres.all %}
+                            <li><a href="">{{genre}}</a></li>
                             {% endfor %}
-                        </ul> {% endcomment %}
+                        </ul>
                     </div>
                 </div>
             </div>

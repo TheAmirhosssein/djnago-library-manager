@@ -66,12 +66,12 @@
                         </ul>
                     </div>
                     <div class="widget-box mb-30">
-                        <span class="caption">ژانر ها</span>
-                        <ul class="category-content">
+                        <span class="caption">ژانرها</span>
+                        <div class="tag-item-wrapper">
                             {% for genre in book.genres.all %}
-                            <li><a href="">{{genre}}</a></li>
+                            <a href="#" class="tag-item">{{genre}}</a>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>

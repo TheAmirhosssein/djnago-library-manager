@@ -15,6 +15,7 @@ class HomeView(ListView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data()
         context["authors"] = models.Authors.objects.annotate(books_count=Count('books')).all()
+        context["genres"] = models.Genres.objects.all()
         return context
     
     def get_queryset(self):

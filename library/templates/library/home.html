@@ -81,6 +81,14 @@
                             {% endfor %}
                         </ul>
                     </div>
+                    <div class="widget-box mb-30">
+                        <span class="caption">ژانرها</span>
+                        <div class="tag-item-wrapper">
+                            {% for genre in genres.all %}
+                            <a href="#" class="tag-item">{{genre}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -62,8 +62,13 @@
                     <nav class="navbar navbar-expand-lg p-0">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav main-menu ml-auto">
-                                <li><a href="/">خانه</a></li>
+                                {% if request.user.is_superuser  %}
+                                <li class="menu_has_children"><a href="{% url 'admin' %}">ادمین</a> </li>
+                                <li class="menu_has_children"><a href="/">ژانر ها</a> </li>
                                 <li class="menu_has_children"><a href="/">کتاب ها</a> </li>
+                                {% endif %}
+                                <li><a href="/">خانه</a></li>
+                                
                             </ul>
                         </div>
                     </nav>

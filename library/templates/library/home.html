@@ -85,7 +85,7 @@
                         <span class="caption">ژانرها</span>
                         <div class="tag-item-wrapper">
                             {% for genre in genres.all %}
-                            <a href="#" class="tag-item">{{genre}}</a>
+                            <a href="{% url 'genres_filter' genre.slug %}" class="tag-item">{{genre}}</a>
                             {% endfor %}
                         </div>
                     </div>

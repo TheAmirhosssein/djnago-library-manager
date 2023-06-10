@@ -22,10 +22,14 @@ class HomeView(ListView):
         query = super(HomeView, self).get_queryset()
         q = self.request.GET.get("q")
         author = self.kwargs.get("author")
+        genre = self.kwargs.get("genre")
         if q is not None:
             query = query.filter(title__contains=q)
         if author is not None:
             query = query.filter(author__slug=author)
+        if genre is not None:
+            selected_genre = models.Genres.objects.get(slug=genre)
+            query = query.filter(genres=selected_genre)
         return query
     
 

@@ -22,10 +22,7 @@
             <div class="col-lg-8">
                 <div class="blog-item mb-60">
                     <div class="blog-thumb--style2">
-                        {% comment %} {% thumbnail author_info.picture '730*430' crop='center' as picture %}
-                        {% endcomment %}
                         <img src="{{author_info.picture}}" alt="image">
-                        {% comment %} {% endthumbnail %} {% endcomment %}
                     </div>
                     <div class="blog-content--style2 blog-content--style3">
                         <h3 class="title">{{author_info.title}}</h3>

@@ -36,44 +36,23 @@
             <div class="col-lg-4" dir="rtl">
                 <div class="sidebar">
                     <div class="widget-box mb-30">
-                        <span class="caption">popular post</span>
+                        <span class="caption">کتاب ها</span>
                         <div class="popular-item-area">
+                            {% for book in books %}
                             <div class="single-popular-item d-flex flex-wrap">
                                 <div class="popular-item-thumb">
-                                    <img src="assets/images/popular-1.png" alt="blog-image">
+                                    <a href="{% url 'book_details' book.slug %}"><img src="{{book.book_image.url}}"
+                                            alt="blog-image"></a>
                                 </div>
                                 <div class="popular-item-content">
-                                    <a href="blog-details.html">
-                                        <h5>accumsan condimtum. ecenas </h5>
+                                    <a href="{% url 'book_details' book.slug %}">
+                                        <h5>{{book.title}} </h5>
                                     </a>
-                                    <span class="blog-user">post by admin</span><span class="blog-date">09 dec
-                                        2019</span>
+                                    <span class="blog-user">{{book.author.name}}</span>
+                                    <span class="blog-date">{{book.publish_date}}</span>
                                 </div>
                             </div>
-                            <div class="single-popular-item d-flex flex-wrap">
-                                <div class="popular-item-thumb">
-                                    <img src="assets/images/popular-2.png" alt="blog-image">
-                                </div>
-                                <div class="popular-item-content">
-                                    <a href="blog-details.html">
-                                        <h5>accumsan condimtum. ecenas </h5>
-                                    </a>
-                                    <span class="blog-user">post by admin</span><span class="blog-date">15 June
-                                        2019</span>
-                                </div>
-                            </div>
-                            <div class="single-popular-item d-flex flex-wrap">
-                                <div class="popular-item-thumb">
-                                    <img src="assets/images/popular-3.png" alt="blog-image">
-                                </div>
-                                <div class="popular-item-content">
-                                    <a href="blog-details.html">
-                                        <h5>accumsan condimtum. ecenas </h5>
-                                    </a>
-                                    <span class="blog-user">post by admin</span><span class="blog-date">28 June
-                                        2019</span>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

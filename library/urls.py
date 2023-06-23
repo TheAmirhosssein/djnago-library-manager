@@ -10,5 +10,4 @@ urlpatterns = [
     path("book/<slug>/", BookDetailView.as_view(), name="book_details"),
     path("author/<slug>/", AuthorView.as_view(), name="author"),
     path("translator/<slug>/", TranslatorView.as_view(), name="translator"),
-    path("genres/<slug>/", GenresView.as_view(), name="genres"),
 ]

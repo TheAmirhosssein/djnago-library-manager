@@ -14,10 +14,12 @@ class HomeView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data()
-        context["authors"] = models.Authors.objects.annotate(books_count=Count('books')).all()
+        context["authors"] = models.Authors.objects.annotate(
+            books_count=Count("books")
+        ).all()
         context["genres"] = models.Genres.objects.all()
         return context
-    
+
     def get_queryset(self):
         query = super(HomeView, self).get_queryset()
         q = self.request.GET.get("q")
@@ -31,7 +33,6 @@ class HomeView(ListView):
             selected_genre = models.Genres.objects.get(slug=genre)
             query = query.filter(genres=selected_genre)
         return query
-    
 
 
 class BookDetailView(DetailView):

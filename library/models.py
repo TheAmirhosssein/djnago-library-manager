@@ -7,6 +7,7 @@ from django.utils.text import slugify
 class Authors(models.Model):
     name = models.CharField(max_length=50, verbose_name="نام")
     slug = models.SlugField(allow_unicode=True, unique=True, editable=False)
+    info = models.JSONField(null=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=True)
